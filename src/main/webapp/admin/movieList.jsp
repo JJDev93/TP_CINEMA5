@@ -5,7 +5,7 @@
 		<div class="jumbotron">
 			<h1>Movie</h1>
 			<p>영화를 등록하고 관리하는 페이지 입니다.</p>
-			<p><a class="btn btn-primary btn-lg" href="#" role="button">신규 영화 등록</a></p>
+			<p><a class="btn btn-primary btn-lg" href="CinemaServlet?command=admin_movie_wirte" role="button">신규 영화 등록</a></p>
 		</div>
 		<div class="page-header">
 			<h2>상영영화 목록</h2>
@@ -14,46 +14,44 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>id</th>
-					<th>이름</th>
-					<th>전화번호</th>
+					<th>코드</th>
+					<th>제목</th>
+					<th>포스터</th>
+					<th>장르</th>
+					<th>영화감독</th>
+					<th>상영일</th>
+					<th>관람자수</th>
+					<th>관람가등급나이</th>
+					<th>러닝타임</th>
+					<th>평점</th>
+					<th>상영여부</th>
 					<th>수정</th>
 					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
+				<c:forEach var="movie" items="${movieList}">
 				<tr>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
+					<td>${movie.movieCode}</td>
+					<td>${movie.title}</td>
+					<td>${movie.poster}</td>
+					<td>${movie.genre}</td>
+					<td>${movie.director}</td>
+					<td>${movie.openDate}</td>
+					<td>${movie.spectators}</td>
+					<td>${movie.filmRate}</td>
+					<td>${movie.runningTime}</td>
+					<td>${movie.grade}</td>
+					<td>${movie.screening}</td>
+					<td class="text-center">
+						<a href="BoardServlet?command=admin_movie_view&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
+					</td>
+					<td class="text-center">
+						<a href="BoardServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
+					</td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-					<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 		<nav class="text-center">
