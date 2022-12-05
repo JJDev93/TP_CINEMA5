@@ -24,6 +24,10 @@ public class ActionFactory {
 			action = new AdminCinemaListAction();
 		}else if(command.equals("admin_movie_list")) {
 			action = new AdminMovieListAction();
+		}else if(command.equals("admin_movie_wirte")) {
+			action = new AdminMovieWriteAction();
+		}else if(command.equals("admin_movie_wirte_now")) {
+			action = new AdminMovieWriteNowAction();
 		}	
 		
 		return action;

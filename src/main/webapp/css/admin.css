@@ -3,3 +3,5 @@
 .navbar-brand img{display:block; height: 100%; }
 .adminCon{ margin-top: 80px;}
 .btn-logout{ margin-top:7px; }
+
+.table tbody th{ background-color: #f8f8f8;}
