@@ -10,10 +10,10 @@ public class ActionFactory {
 	public static ActionFactory getInstance() {
 		return instance;
 	}
-	
+
 	public Action getAction(String command) {
 		Action action = null;
-		
+
 		if(command.equals("main_page")) {
 			action = new MainPageAction();
 		}else if(command.equals("member_join")) {
@@ -28,8 +28,13 @@ public class ActionFactory {
 			action = new AdminMovieWriteAction();
 		}else if(command.equals("admin_movie_wirte_now")) {
 			action = new AdminMovieWriteNowAction();
-		}	
-		
+		}else if(command.equals("member_login")){
+			action = new MemberloginAction();
+		}else if(command.equals("join_now")) {
+			action = new JoinNowAction();
+		}else if(command.equals("enjoy_now")) {
+			action = new EnjoyNowAction();
+		}
 		return action;
 	}
 }

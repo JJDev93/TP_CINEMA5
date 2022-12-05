@@ -8,7 +8,8 @@
       <li><a href="NonMembersLogin.jsp">비회원 예매</a></li>
       <li><a href="">비회원 예매확인</a></li>
    </ul>
-   <form action="join.do" method="post" id="Join" class="member">
+   <form action="CinemaServlet" method="post" id="Join" class="member">
+    <input type="hidden" name="command" value="join_now">
       <div class="login_con01">
          <div class="login_box mBorderColor">
             <h4>개인정보 입력</h4>
@@ -21,8 +22,6 @@
                      <span class="ps_box int_id"> <input type="text" id="id"
                         name="id" class="int" tilte="ID" maxlength="20">
                      </span>
-                     <!-- <br> <span class="error_next_box" id="idMsg" style -->
-                     <!-- aria-live="assertive">필수정보 입니다</span> -->
                   </div>
                   <div class="join_row">
                      <h5 class="join_title">
@@ -32,8 +31,6 @@
                         type="password" id="pwed1" name="pwed1" class="int"
                         title="비밀번호 입력" maxlength="20">
                      </span>
-                     <!-- <br> <span class="error_next_box" id="pswd1Msg" style -->
-                     <!-- aria-live="assertive">필수정보 입니다</span> -->
 
                      <h5 class="join_title">
                         <label for="pswd2">비밀번호 재확인</label>
@@ -41,8 +38,6 @@
                      <span class="ps_box int_pass_check" id="pswd2Img"> <input
                         type="password" id="pswd2" name="pswd2" class="int"
                         title="비밀번호 재확인 입력" maxlength="20"> 
-                        <!-- <span id="pswd2Blind" class="wa_blind"> 설정하려는 비밀번호가 맞는지 -->
-                        <!--  확인하기 위해 다시 입력해주세요</span> -->
                      </span>
                   </div>
                </div>
@@ -54,8 +49,6 @@
                      <span class="ps_box box_right_space"> <input type="text"
                         id="name" name="name" title="이름" class="int" maxlength="40">
                      </span>
-                     <!--                      <span class="error_next_box" id="nameMsg" style="display: none" -->
-                     <!--                         aria-live="assertive"></span> -->
                   </div>
                   <div class="join_row join_birthday">
                      <h5 calss="join_title">
@@ -63,8 +56,8 @@
                      </h5>
                      <div class="bir_wrap">
                         <div class="bir_yy">
-                           <span class="ps_box"> <input type="date" id="yy"
-                              placeholder="년/일/월" aria-label="년/일/월" class="yyy"
+                           <span class="ps_box"> <input type="date" id="birth"
+                              placeholder="년/일/월" aria-label="년/일/월" class="birth" name="birth"
                               maxlength="4">
                            </span>
                         </div>
@@ -108,10 +101,9 @@
                   <span class="ps_box mobile"> <input type="tel"
                      id="phoneNo" name="phoneNo" placeholder="전회번호 입력"
                      aria-label="전화번호입력" class="int" maxlength="16"> 
-                     <!-- <label for="phoneNo" class="lbl"></label> -->
                   </span>
                </div>
-               <input type="button" value="가입하기" class="join_now bt_submit mainBgColor">
+               <input type="submit" value="가입하기" class="join_now bt_submit mainBgColor" onclick="return LoginCheck()">
             </div>
          </div>
       </div>

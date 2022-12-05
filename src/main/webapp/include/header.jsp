@@ -20,7 +20,7 @@
         <h1><a href="CinemaServlet?command=main_page" class="logo"><img src="images/header/logoRed.png" alt=""></a></h1>
         <div class="topLink">
           <ul class="topLinkUl clear">
-            <li><a href="CinemaServlet?command=main_page"><span class="material-symbols-outlined">login</span><span class="spanTxt">로그인</span></a></li>
+            <li><a href="CinemaServlet?command=member_login"><span class="material-symbols-outlined">login</span><span class="spanTxt">로그인</span></a></li>
             <li><a href="CinemaServlet?command=member_join"><span class="material-symbols-outlined">person_add</span><span class="spanTxt">회원가입</span></a></li>
             <li><a href="CinemaServlet?command=mypage_view"><span class="material-symbols-outlined">person</span><span class="spanTxt">MY CGV</span></a></li>
             <li><a href="CinemaServlet?command=main_page"><span class="material-symbols-outlined">support_agent</span><span class="spanTxt">고객센터</span></a></li>
