@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.wid{ width: 980px; margin: 0 auto; }
+.clear::after{ display: block; content: ""; clear: both;}
+.clear > li{float: left;}
+.mainColor{ color: #fb4357; }
+.mainBgColor{ background: #fb4357; }
+.str{position: relative;}
+
+.subcon { padding: 240px 0 100px; }
+.mBorderColor{ border: 1px solid #d5d4cd; }

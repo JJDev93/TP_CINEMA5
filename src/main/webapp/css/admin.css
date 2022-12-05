@@ -1,0 +1,5 @@
+@charset "UTF-8";
+.navbar-brand{}
+.navbar-brand img{display:block; height: 100%; }
+.adminCon{ margin-top: 80px;}
+.btn-logout{ margin-top:7px; }
