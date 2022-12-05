@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/include/admin_header.jsp"%>
+<script type="text/javascript" src="js/movie.js"></script>
 <div class="container adminCon">
 	<div class="page-header">
 		<h2>상영영화 등록</h2>
 	</div>
-	<form action="CinemaServlet?command=admin_movie_wirte_now" method="post" enctype="multipart/form-data">
+	<form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_wirte_now">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -103,7 +104,7 @@
 				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
 			</div>
 			<div class="pull-right">
-				<input class="btn btn-primary" type="submit" value="등록"> 
+				<input class="btn btn-primary" type="submit" value="등록" onclick="return moviewWriteCheck()"> 
 			</div>
 		</div>
 	</form>
