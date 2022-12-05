@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+iframe{ width: 100%; height: 700px; }
+
+#bodyContainer h2{ text-align: center; margin-bottom: 50px; font-family: 'Hahmlet', serif; font-size: 36px; font-weight: 700; }
+
+.mainVisual{ background: #000000; padding-top: 140px; }
+
+.chartDiv{ background: #000000; color: #ffffff; text-align: center; padding: 50px 0 100px; }
+.chartDiv h2{ color: #ffffff;  }
+.chartDiv .chartMovie{ padding: 0 10px; box-sizing: border-box; }
+.chartDiv .chartMovie a{ color: #ffffff; border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 20px; }
+.chartDiv .chartMovie a img{ display: inline-block; width: 100%; }
+.chartDiv .chartMovie a::after{ display: block; content: attr(data-text); overflow: hidden; color: white; font-size: 77px; position: absolute; left: 2px; bottom: 0; z-index: 100; font-family: 'Hahmlet', serif; transform: rotate(11deg); text-shadow: 2px 2px 4px rgb(0 0 0 / 50%); }
+.chartDiv .chartMovie .movieInfo .tit{ font-size: 18px; margin-bottom:10px; font-family: 'Hahmlet', serif; }
+.chartDiv .chartMovie .movieInfo .txt{ font-weight: 200; font-size: 12px; }
+
+.eventDiv{ padding: 150px 0 70px; }
+.eventDiv .item{ padding: 0 10px; box-sizing: border-box;}
+.eventDiv .item a{ display: block; }
+.eventDiv .item .pic{ display: block; border-radius: 20px; overflow: hidden; margin-bottom: 20px; }
+.eventDiv .item .pic img{ display: block; width: 100%; transition: 0.5s; }
+.eventDiv .item .pic:hover img{ transform: scale(1.1); }
+.eventDiv .item .txt{ letter-spacing: -0.5px; }
+.eventDiv .item .tit{ font-weight: 500; }
+.eventDiv .item .date{ margin-top:10px; color: #404040; font-size: 14px; }
+
+.cineRoomDiv{ padding: 70px 0 70px; }
+.cineRoomDiv .picDiv{ float: left; width: 450px; }
+.cineRoomDiv .picDiv .pic{ display: none; }
+.cineRoomDiv .picDiv .pic a{ display: block; border-radius: 10px; overflow: hidden; }
+.cineRoomDiv .picDiv .pic img{ display: block; width: 100%; }
+.cineRoomDiv .picDiv .pic.on{ display: block; }
+.cineRoomDiv .roomName{ float: right; width: 450px; }
+.cineRoomDiv .roomName .txtDiv:first-child{ border-top:1px solid #e3e3e3;}
+.cineRoomDiv .roomName .txtDiv a{ display: block; height: 37px; line-height: 37px; border-bottom:1px solid #e3e3e3; padding: 10px; position: relative; }
+.cineRoomDiv .roomName .txtDiv .tit{ font-weight: 700;  }
+.cineRoomDiv .roomName .txtDiv .info{ position: absolute; top: 50%; right: 10px; font-weight: 300; transform: translateY(-50%); }
+.cineRoomDiv .roomName .txtDiv.on a,
+.cineRoomDiv .roomName .txtDiv:hover a{ background: #1a1a1a; color: #ffffff; }
+
+.shopDiv{ margin-bottom: 200px; }
+.shopCom{ float: left; width: 32%; margin-right: 2%; border-radius: 10px; border: 1px solid #e3e3e3; padding: 20px; box-sizing: border-box; }
+.shopCom:last-child{ margin-right: 0; }
+.shopCom .h3Div{ position: relative; margin-top: 10px; }
+.shopCom .h3Div h3{ font-weight: 500; }
+.shopCom .h3Div p{ position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.shopCom .h3Div p a{ display: block; font-size: 12px; border-radius: 10px; border: 1px solid #e3e3e3; padding: 5px 10px; transition: 0.5s; }
+.shopCom .h3Div p:hover a{ background: #ed3124; color: #ffffff;  }
+.shopCom ul li{ padding: 10px 0; }
+.shopCom ul li a{ display: block; position: relative; }
+.shopCom ul li a::after{ display: block; content: ""; clear: both; }
+.shopCom ul li a .pic{ width: 100px; }
+.shopCom ul li a .pic img{ display: block; width: 100px; }
+.shopCom ul li a .txt{ position: absolute; left: 120px; top: 50%; transform: translateY(-50%); letter-spacing: -0.5px;}
+.shopCom ul li a .txt .tit{ margin-bottom: 5px; font-size: 14px; }
+.shopCom ul li a .txt .price{ font-weight: 700; }
+
+
+.cardEvent{ background: #ffa443; margin-top: 50px; }
+.cardEvent .wid{ height: 181px; }
+.cardEvent img{ position: absolute; bottom: 0; left: 0; width: 100%; }
