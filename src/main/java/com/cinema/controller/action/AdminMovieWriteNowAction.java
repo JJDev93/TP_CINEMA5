@@ -28,37 +28,20 @@ public class AdminMovieWriteNowAction implements Action{
 		MovieVO movieVo = new MovieVO();
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, uploadFileSizeLimit, encType, policy);
-			
-			System.out.println("저장 : " + uploadFilePath);
-			
 			String fileName = multi.getFilesystemName("moviePoster");
-			
-			System.out.println(multi.getFileNames());
-			
-			System.out.println(multi.getFilesystemName("movieStillcut[0]"));
-			
-						
-			Enumeration multiFiles = multi.getFileNames();
-			while(multiFiles.hasMoreElements()) {
-				String multiFile = (String)multiFiles.nextElement();
-				String stillcutName = multi.getFilesystemName(multiFile);
-				System.out.println(stillcutName);
+			String stillcutName = multi.getParameter("stillcutList");
 				
-				
-			}
-			
-			
 			movieVo.setTitle(multi.getParameter("movieTitle"));
 			if(fileName == null) {
 				movieVo.setPoster("none.gif");
 			}else {					
 				movieVo.setPoster(fileName);
 			}
-//			if(stillcutName == null) {
-//				movieVo.setStillcut("none.gif");
-//			}else {					
-//				movieVo.setStillcut(stillcutName);
-//			}		
+			if(stillcutName == null) {
+				movieVo.setStillcut("none.gif");
+			}else {					
+				movieVo.setStillcut(stillcutName);
+			}		
 			movieVo.setScenario(multi.getParameter("movieScenario"));
 			movieVo.setGenre(multi.getParameter("movieGenre"));	
 			movieVo.setDirector(multi.getParameter("movieDirector"));	
@@ -71,8 +54,10 @@ public class AdminMovieWriteNowAction implements Action{
 			System.out.println("예외발생 : " + e);
 		}
 		
-		//MovieDAO movieDao = MovieDAO.getInstance();
-		//movieDao.insertBoard(movieVo);
+		MovieDAO movieDao = MovieDAO.getInstance();
+		movieDao.insertBoard(movieVo);
+		
+		System.out.println(movieVo);
 		
 		new AdminMovieListAction().execute(request, response);
 		
