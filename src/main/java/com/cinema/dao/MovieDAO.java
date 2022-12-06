@@ -59,24 +59,23 @@ public class MovieDAO {
 	
 	//하나의 게시글을 삽입하는 메소드
 	public void insertBoard(MovieVO movieVo){
-		String sql="insert into "+ tbl_name +"(movieCode, title, poster, stillcut, scenario, genre, director, cast, openDate, filmRate, runningTime, screening) values(null,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql="insert into "+ tbl_name +"(movieCode, title, poster, stillcut, scenario, genre, director, cast, openDate, filmRate, runningTime, screening) values(null,?,?,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, movieVo.getMovieCode());
-			pstmt.setString(2, movieVo.getTitle());
-			pstmt.setString(3, movieVo.getPoster());
-			pstmt.setString(4, movieVo.getStillcut());
-			pstmt.setString(5, movieVo.getScenario());
-			pstmt.setString(6, movieVo.getGenre());
-			pstmt.setString(7, movieVo.getDirector());
-			pstmt.setString(8, movieVo.getCast());
-			pstmt.setString(9, movieVo.getOpenDate());
-			pstmt.setInt(10, movieVo.getFilmRate());
-			pstmt.setInt(11, movieVo.getRunningTime());
-			pstmt.setBoolean(12, movieVo.isScreening());
+			pstmt.setString(1, movieVo.getTitle());
+			pstmt.setString(2, movieVo.getPoster());
+			pstmt.setString(3, movieVo.getStillcut());
+			pstmt.setString(4, movieVo.getScenario());
+			pstmt.setString(5, movieVo.getGenre());
+			pstmt.setString(6, movieVo.getDirector());
+			pstmt.setString(7, movieVo.getCast());
+			pstmt.setString(8, movieVo.getOpenDate());
+			pstmt.setInt(9, movieVo.getFilmRate());
+			pstmt.setInt(10, movieVo.getRunningTime());
+			pstmt.setBoolean(11, movieVo.isScreening());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,5 +83,4 @@ public class MovieDAO {
 			DBManager.close(conn, pstmt);			
 		}
 	}
-
 }

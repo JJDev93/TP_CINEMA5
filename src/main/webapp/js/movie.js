@@ -18,5 +18,34 @@ function moviewWriteCheck(){
       frm.title.focus();
       return false;
    }
+   $("input[type=file]").change(function () {
+            
+            var fileInput = document.getElementById("movieStillcut");
+            
+            var files = fileInput.files;
+            var file;
+            
+            for (var i = 0; i < files.length; i++) {
+                
+                file = files[i];
+ 
+                alert(file.name);
+            }
+            
+        });
+ 
    return true;
+}
+
+function StillcutJPG(){
+	var InputStillcut = document.getElementById("movieStillcut");        
+    var files = InputStillcut.files;
+    var file;
+    var StillcutName = "";
+    for (var i = 0; i < files.length; i++) {
+        file = files[i];
+        StillcutName += "," + file.name;
+    }
+    alert(StillcutName);
+   	return true;
 }

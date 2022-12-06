@@ -2,11 +2,29 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/include/admin_header.jsp"%>
 <script type="text/javascript" src="js/movie.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready( function() {
+	    $("input[type=file]").change(function () {
+	        var InputStillcut = document.getElementById("movieStillcut");        
+	        var files = InputStillcut.files;
+	        var file;
+	        var StillcutName = "";
+	        for (var i = 0; i < files.length; i++) {
+	            file = files[i];
+	            StillcutName += "," + file.name;
+	        }
+            //alert(StillcutName);
+            $('#stillcutList').val(StillcutName);
+	    });
+	}); 
+</script>
 <div class="container adminCon">
 	<div class="page-header">
 		<h2>상영영화 등록</h2>
 	</div>
-	<form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_wirte_now">
+	<!-- <form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_wirte_now"> -->
+	<form name="frm" method="post" enctype="multipart/form-data" action="">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -19,7 +37,7 @@
 				</tr>
 				<tr>
 					<th><label for="moviePoster">포스터</label></th>
-					<td><input type="file" class="form-control" id="moviePoster" name="movieTitle"></td>
+					<td><input type="file" class="form-control" id="moviePoster" name="moviePoster"></td>
 				</tr>
 				<tr>
 					<th><label for="movieScenario">시나리오</label></th>
@@ -93,12 +111,12 @@
 				<tr>
 					<th><label for="movieStillcut">스틸컷</label></th>
 					<td>
-						<input multiple="multiple" type="file" class="form-control" id="movieStillcut" name="movieStillcut[]">
+						<input multiple="multiple" type="file" class="form-control" id="movieStillcut">
+						<input type="text" class="form-control" value="" id="stillcutList">
 					</td>
 				</tr>
 			</tbody>
 		</table>
-
 		<div class="text-center">
 			<div class="pull-left">
 				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
