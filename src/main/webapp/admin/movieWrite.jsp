@@ -9,11 +9,12 @@
 	        var InputStillcut = document.getElementById("movieStillcut");        
 	        var files = InputStillcut.files;
 	        var file;
-	        var StillcutName = "";
+	        var StillcutNameList = "";
 	        for (var i = 0; i < files.length; i++) {
 	            file = files[i];
-	            StillcutName += "," + file.name;
+	            StillcutNameList += "," + file.name;
 	        }
+	        var StillcutName = StillcutNameList.substring(1); //맨앞에 , 빼기
             //alert(StillcutName);
             $('#stillcutList').val(StillcutName);
 	    });
@@ -23,8 +24,7 @@
 	<div class="page-header">
 		<h2>상영영화 등록</h2>
 	</div>
-	<!-- <form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_wirte_now"> -->
-	<form name="frm" method="post" enctype="multipart/form-data" action="">
+	<form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_wirte_now">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -112,7 +112,7 @@
 					<th><label for="movieStillcut">스틸컷</label></th>
 					<td>
 						<input multiple="multiple" type="file" class="form-control" id="movieStillcut">
-						<input type="text" class="form-control" value="" id="stillcutList">
+						<input type="text" class="form-control" value="" name="stillcutList" id="stillcutList">
 					</td>
 				</tr>
 			</tbody>
