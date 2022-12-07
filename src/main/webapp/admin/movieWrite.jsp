@@ -90,7 +90,7 @@
 				</tr>
 				<tr>
 					<th><label for="movieRunningTime">러닝타임</label></th>
-					<td><input type="text" class="form-control" id="movieRunningTime" name="movieRunningTime" style="width:150px; display: inline-block;"> 분</td>
+					<td><input type="number" class="form-control" id="movieRunningTime" name="movieRunningTime" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="숫자만 입력" min='0' max='500' style="width:150px; display: inline-block;"> 분</td>
 				</tr>
 				<tr>
 					<th><label for="movieScreening">상영여부</label></th>
@@ -112,7 +112,7 @@
 					<th><label for="movieStillcut">스틸컷</label></th>
 					<td>
 						<input multiple="multiple" type="file" class="form-control" id="movieStillcut">
-						<input type="text" class="form-control" value="" name="stillcutList" id="stillcutList">
+						<input type="hidden" class="form-control" value="" name="stillcutList" id="stillcutList">
 					</td>
 				</tr>
 			</tbody>

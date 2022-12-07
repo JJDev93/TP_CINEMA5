@@ -57,6 +57,49 @@ public class MovieDAO {
 		return list;
 	}
 	
+	//코드로 값 Select하는 메소드
+	public MovieVO selectByCode(String movieCode){
+		String sql = "select * from " + tbl_name + " where movieCode=?";
+		//다형성
+		MovieVO movieVo = null;
+		
+		try {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, movieCode);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					movieVo = new MovieVO();
+					movieVo.setTitle(rs.getString("title"));
+					movieVo.setPoster(rs.getString("poster"));
+					movieVo.setStillcut(rs.getString("stillcut"));
+					movieVo.setScenario(rs.getString("scenario"));
+					movieVo.setGenre(rs.getString("genre"));
+					movieVo.setDirector(rs.getString("director"));
+					movieVo.setCast(rs.getString("cast"));
+					movieVo.setOpenDate(rs.getString("openDate"));
+					movieVo.setSpectators(rs.getInt("spectators"));
+					movieVo.setFilmRate(rs.getInt("filmRate"));
+					movieVo.setRunningTime(rs.getInt("runningTime"));
+					movieVo.setGrade(rs.getFloat("grade"));
+					movieVo.setScreening(rs.getBoolean("screening"));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return movieVo;
+	}
+	
 	//하나의 게시글을 삽입하는 메소드
 	public void insertBoard(MovieVO movieVo){
 		String sql="insert into "+ tbl_name +"(movieCode, title, poster, stillcut, scenario, genre, director, cast, openDate, filmRate, runningTime, screening) values(null,?,?,?,?,?,?,?,?,?,?,?)";
@@ -81,6 +124,6 @@ public class MovieDAO {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(conn, pstmt);			
-		}
+		}		
 	}
 }

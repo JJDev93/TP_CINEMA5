@@ -20,21 +20,12 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="CinemaServlet?command=admin_movie_list">상영영화관리</a></li>
-					<c:choose>
-						<c:when test="${command=admin_movie_list}">
-							<li class="active"><a href="CinemaServlet?command=admin_member_list">회원관리 <span class="sr-only">(current)</span></a></li>
-						</c:when>
-						<c:otherwise>
-							<li><a href="CinemaServlet?command=admin_member_list">회원관리</a></li>
-						</c:otherwise>
-					</c:choose>
+					<li><a href="CinemaServlet?command=admin_movie_list">영화관리</a></li>
+					<li><a href="CinemaServlet?command=admin_member_list">회원관리</a></li>
 					<li><a href="CinemaServlet?command=admin_cinema_list">영화관관리</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right btn-logout">
-				<li><a href="CinemaServlet?command=member_logout"><span
-										class="btn btn-danger">로그아웃</span></a></li>
-<!-- 					<li><button type="button" class="btn btn-danger">로그아웃</button></li> -->
+					<li><a href="CinemaServlet?command=member_logout" style="padding: 0;"><span class="btn btn-danger">로그아웃</span></a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

@@ -34,8 +34,17 @@
 				<tr>
 					<td></td>
 					<td>${movie.movieCode}</td>
-					<td>${movie.title}</td>
-					<td>${movie.poster}</td>
+					<td><a href="CinemaServlet?command=admin_movie_view&movieCode=${movie.movieCode}">${movie.title}</a></td>
+					<td class="trPoster">
+						<c:choose>
+							<c:when test="${empty movie.poster}">
+								<img alt="" src="upload/noimage.gif">
+							</c:when>
+							<c:otherwise>
+								<img alt="" src="upload/${movie.poster}">
+							</c:otherwise>
+						</c:choose>
+					</td>
 					<td>${movie.genre}</td>
 					<td>${movie.director}</td>
 					<td>${movie.openDate}</td>
@@ -45,10 +54,10 @@
 					<td>${movie.grade}</td>
 					<td>${movie.screening}</td>
 					<td class="text-center">
-						<a href="BoardServlet?command=admin_movie_view&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
+						<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
 					</td>
 					<td class="text-center">
-						<a href="BoardServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
+						<a href="CinemaServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
 					</td>
 				</tr>
 				</c:forEach>

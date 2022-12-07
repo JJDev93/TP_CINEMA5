@@ -1,20 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>영화 그 이상의 감동. CGV</title>
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="css/slick.css">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/hdft.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/member.css">
+	<meta charset="UTF-8">
+	<title>영화 그 이상의 감동. CGV</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/hdft.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/member.css">
 </head>
 <body>
 	<header id="header">
