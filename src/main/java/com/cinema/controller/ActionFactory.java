@@ -32,8 +32,12 @@ public class ActionFactory {
 			action = new MemberloginAction();
 		}else if(command.equals("join_now")) {
 			action = new JoinNowAction();
-		}else if(command.equals("enjoy_now")) {
-			action = new EnjoyNowAction();
+		}else if(command.equals("login_now")) {
+			action = new LoginNowAction();
+		}else if(command.equals("member_logout")) {
+			action = new MemberLogoutAction();
+		}else if(command.equals("mypage_view")) {
+			action = new MypageviewFormAction();
 		}
 		return action;
 	}

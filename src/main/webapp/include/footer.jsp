@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
   <footer id="footer">
     <div class="ftTop">
       <ul class="wid clear">
@@ -26,7 +28,15 @@
             <p><span class="spanTxt">호스팅사업자</span><span>CJ올리브네트웍스</span></p>
             <p><span class="spanTxt">개인정보보호 책임자</span><span>심준범</span></p>
             <p><span class="spanTxt">대표이메일</span><span>cjcgvmaster@cj.net</span></p>
+            
+            <c:if test="${loginUser.lev == 'B'}">
             <p><a href="CinemaServlet?command=admin_member_list">관리자</a></p>
+            </c:if>
+            
+            <c:if test="${loginUser.lev == 'A' || empty loginUser.id}">
+<!--             <p>null</p> -->
+            </c:if>
+            
           </div>
           <div><p>&copy; CJ CGV. All Rights Reserved</p></div>
         </address>

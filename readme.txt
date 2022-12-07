@@ -3,7 +3,7 @@ use cinema;
 
 create table tbl_movieInfo (
 	movieCode int(10) not null auto_increment primary key COMMENT '영화코드',
-	title varchar(20) not null COMMENT '영화코드',
+	title varchar(20) not null COMMENT '영화제목',
 	poster varchar(100) not null COMMENT '포스터',
 	stillcut varchar(1000) COMMENT '스틸컷',
 	scenario varchar(1000) not null COMMENT '시나리오',

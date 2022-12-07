@@ -32,7 +32,9 @@
 					<li><a href="CinemaServlet?command=admin_cinema_list">영화관관리</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right btn-logout">
-					<li><button type="button" class="btn btn-danger">로그아웃</button></li>
+				<li><a href="CinemaServlet?command=member_logout"><span
+										class="btn btn-danger">로그아웃</span></a></li>
+<!-- 					<li><button type="button" class="btn btn-danger">로그아웃</button></li> -->
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
