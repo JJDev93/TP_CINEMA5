@@ -10,7 +10,8 @@
       <li><a href="NonMembersLogin.jsp">비회원 예매</a></li>
       <li><a href="">비회원 예매확인</a></li>
    </ul>
-   <form action="" method="post" id="Enjoy" name="Enjoy" class="member">
+   <form action="CinemaServlet" method="post" id="Enjoy" name="Enjoy" class="login_now">
+   <input type="hidden" name="command" value="login_now">
    
    <fieldset class="enjoy_member">
    <p>아이디 비밀번호를 입력하신 후,로그인 버튼을 클릭해주세요</p> <br>
@@ -21,7 +22,7 @@
      <input type="password" title="비밀번호" id="pass" name="pass">
    </div>
    
-   <input type="submit" value="로그인" class="enjoy_now" onclick="return LoginCheck()">
+   <input type="submit" value="로그인" class="enjoy_button" onclick="return LoginCheck()">
    
    </fieldset>
    

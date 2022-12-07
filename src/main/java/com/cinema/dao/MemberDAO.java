@@ -138,6 +138,7 @@ public class MemberDAO {
                mvo.setBirth(rs.getString("birth"));
                mvo.setEmail(rs.getString("email"));
                mvo.setPhone(rs.getString("phone"));
+               mvo.setLev(rs.getString("lev"));
             }
          } catch (Exception e) {
             e.printStackTrace();

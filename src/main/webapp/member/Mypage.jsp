@@ -1,19 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ include file="/include/header.jsp"%>
 <script type="text/javascript" src="js/member.js"></script>
 <section class="subcon wid loginPage">
-   <h2>회원가입</h2>
-   <ul class="loginLink clear">
-      <li class="on"><a href="JoinForm.jsp">로그인</a></li>
-      <li><a href="NonMembersLogin.jsp">비회원 예매</a></li>
-      <li><a href="">비회원 예매확인</a></li>
-   </ul>
+   <h2>마이페이지</h2>
    <form action="CinemaServlet" method="post" id="Join" class="member" name="Join">
     <input type="hidden" name="command" value="join_now">
       <div class="login_con01">
          <div class="login_box mBorderColor">
-            <h4>개인정보 입력</h4>
+            <h4>나의 개인정보</h4>
             <div class="input_ul join_member">
                <div class="row_group">
                   <div class="join_row">
@@ -31,16 +26,15 @@
                      </h5>
                      <span class="ps_box int_pass" id="pswdImg"> <input
                         type="password" id="pwed1" name="pwed1" class="int"
-                        title="비밀번호 입력" maxlength="20">
+                        title="비밀번호 입력" maxlength="20" placeholder="현재비밀번호">
+                        <input
+                        type="password" id="pwed2" name="pwed2" class="int"
+                        title="비밀번호 변경" maxlength="20" placeholder="변경할 비밀번호">
+                        <input
+                        type="password" id="pwed3" name="pwed3" class="int"
+                        title="비밀번호 변경" maxlength="20" placeholder="변경한 비밀번호 재확인">
                      </span>
 
-                     <h5 class="join_title">
-                        <label for="pswd2">비밀번호 재확인</label>
-                     </h5>
-                     <span class="ps_box int_pass_check" id="pswd2Img"> <input
-                        type="password" id="pswd2" name="pswd2" class="int"
-                        title="비밀번호 재확인 입력" maxlength="20"> 
-                     </span>
                   </div>
                </div>
                <div class="row_group">
@@ -66,26 +60,13 @@
                      </div>
                      <span class="error_next_box" id="birthMsg" style="display: none" aria-live="assertive"></span>
                   </div>
-                  <div class="join_row join_sex">
-                     <h5 class=join_title>
-                        <label for="gender">성별</label>
-                     </h5>
-                     <div class="ps_box gender_code">
-                        <select id="gender" name="gender" class="gen" aria-label="성별">
-                           <option value selected>성별</option>
-                           <option value="M">남자</option>
-                           <option value="F">여자</option>
-                           <option value="U">선택 안함</option>
-                        </select>
-                     </div>
-                  </div>
                   <div class="join_row join_email">
                      <h5 class="join_title">
                         <label for="email">이메일</label>
                      </h5>
                      <span class="ps_box int_email box_right_space"> 
                      <input
-                        type="text" id="email" name="email" placeholder="선택입력"
+                        type="text" id="email" name="email" placeholder="이메일 변경"
                         aria-label="선택입력" class="email" maxlength="100">
                      </select>
                      </span>
@@ -100,10 +81,13 @@
                      aria-label="전화번호입력" class="int" maxlength="16"> 
                   </span>
                </div>
-               <input type="submit" value="가입하기" class="join_now bt_submit mainBgColor" onclick="return JoinCheck()">
+               <input type="submit" value="변경하기" class="join_now bt_submit mainBgColor" onclick="return MemberChange()">
             </div>
          </div>
       </div>
    </form>
+
+
+
 </section>
 <%@ include file="/include/footer.jsp"%>
