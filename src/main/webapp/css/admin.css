@@ -4,5 +4,5 @@
 .btn-logout{ margin-top:7px; }
 
 .table tbody th{ background-color: #f8f8f8;}
-.table tbody .trPoster{max-width:300px}
+.table tbody .trPoster{max-width:100px}
 .table tbody .trPoster img{display:block;width: 100%;}

@@ -95,7 +95,8 @@
 			<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
 		</div>
 		<div class="pull-right">
-			<input class="btn btn-primary" type="submit" value="수정" onclick="location.href='CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}'"> 
+			<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary">수정</a>
+			<a href="CinemaServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger">삭제</a>
 		</div>
 	</div>
 </div>
