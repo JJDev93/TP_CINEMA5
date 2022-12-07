@@ -28,6 +28,8 @@ public class ActionFactory {
 			action = new AdminMovieWriteAction();
 		}else if(command.equals("admin_movie_wirte_now")) {
 			action = new AdminMovieWriteNowAction();
+		}else if(command.equals("admin_movie_view")) {
+			action = new AdminMovieViewAction();
 		}else if(command.equals("member_login")){
 			action = new MemberloginAction();
 		}else if(command.equals("join_now")) {

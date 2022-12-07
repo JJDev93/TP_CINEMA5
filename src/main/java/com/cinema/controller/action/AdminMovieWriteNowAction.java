@@ -1,10 +1,6 @@
 package com.cinema.controller.action;
 
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -56,8 +52,6 @@ public class AdminMovieWriteNowAction implements Action{
 		
 		MovieDAO movieDao = MovieDAO.getInstance();
 		movieDao.insertBoard(movieVo);
-		
-		System.out.println(movieVo);
 		
 		new AdminMovieListAction().execute(request, response);
 		
