@@ -51,6 +51,26 @@ function JoinCheck(){
 		Join.name.focus();
 		return false;
 	}
+	if (document.Join.birth.value == "") {
+		alert("생일을 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
+	if (document.Join.gender.value == "") {
+		alert("성별을 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
+	if (document.Join.email.value == "") {
+		alert("이메일을 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
+	if (document.Join.phoneNo.value == "") {
+		alert("전화번호를 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
 	
 	return true;
 	
@@ -64,10 +84,15 @@ function idCheck() {
 		document.Join.id.focus();
 		return;
 	}
-	var url = "idCheck.do?userid=" + document.Join.id.value;
+	var url = "CinemaServlet?command=member_idcheck&id=" + document.Join.id.value;
 	window.open(url, "_blnak_1", "toolbar=no , menubar=no , scrollbars=yes , resizable=no , width=450 , height=200");
 }
 
+function idok() {
+	opener.Join.id.value = document.Join.id.value;
+	opener.Join.command.value = document.Join.id.value;
+	self.close();
+}
 
 
 function MemberChange(){
@@ -78,6 +103,29 @@ function MemberChange(){
 
 	}
 	
+	if(document.Join.pwed2.value != document.Join.pwed3.value){
+		alert("비밀번호가 일치하지 않습니다");
+		Join.pwed1.focus();
+		return false;
+	}
+	
+	if (document.Join.name.value == 0) {
+		alert("이름를 써주세요");
+		Join.name.focus();
+		return false;
+
+	}
+	if (document.Join.email.value == "") {
+		alert("이메일을 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
+	if (document.Join.phoneNo.value == "") {
+		alert("전화번호를 입력해주세요");
+		Join.name.focus();
+		return false;
+	}
+	return true;
 }
 
 
