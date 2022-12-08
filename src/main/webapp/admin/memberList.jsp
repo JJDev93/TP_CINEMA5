@@ -16,9 +16,11 @@
 				<th>id</th>
 				<th>이름</th>
 				<th>전화번호</th>
+				<th>생일</th>
+				<th>이메일</th>
 				<th>가입일자</th>
-				<th>수정</th>
-				<th>삭제</th>
+				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -27,9 +29,9 @@
 					<td>${cinema.id}</td>
 					<td>${cinema.name}</td>
 					<td>${cinema.phone}</td>
+					<td>${cinema.birth } </td>
+					<td>${cinema.email}</td>
 					<td><fmt:formatDate value="${cinema.regdate}" /></td>
-					<td><a href="cinemaUpdate.do?id=${cinema.id}">수정</a></td>
-					<td><a href="cinemaDelete.do?id=${cinema.id}">삭제</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
