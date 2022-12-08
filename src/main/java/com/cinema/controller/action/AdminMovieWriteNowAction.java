@@ -1,6 +1,8 @@
 package com.cinema.controller.action;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,20 +26,17 @@ public class AdminMovieWriteNowAction implements Action{
 		MovieVO movieVo = new MovieVO();
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, uploadFileSizeLimit, encType, policy);
-			String fileName = multi.getFilesystemName("moviePoster");
-			String stillcutName = multi.getParameter("stillcutList");
-				
-			movieVo.setTitle(multi.getParameter("movieTitle"));
-			if(fileName == null) {
-				movieVo.setPoster("none.gif");
-			}else {					
-				movieVo.setPoster(fileName);
+			
+			Enumeration multiFiles = multi.getFileNames();
+			while(multiFiles.hasMoreElements()) {
+				String multiFile  = (String)multiFiles.nextElement();
+				String stillcutName = multi.getFilesystemName(multiFile);
+				System.out.println("file_name : " + stillcutName);
 			}
-			if(stillcutName == null) {
-				movieVo.setStillcut("none.gif");
-			}else {					
-				movieVo.setStillcut(stillcutName);
-			}		
+							
+			movieVo.setTitle(multi.getParameter("movieTitle"));
+			movieVo.setPoster(multi.getFilesystemName("moviePoster"));
+			movieVo.setStillcut(multi.getParameter("stillcutList"));
 			movieVo.setScenario(multi.getParameter("movieScenario"));
 			movieVo.setGenre(multi.getParameter("movieGenre"));	
 			movieVo.setDirector(multi.getParameter("movieDirector"));	

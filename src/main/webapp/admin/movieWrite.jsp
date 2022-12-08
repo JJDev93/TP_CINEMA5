@@ -81,10 +81,10 @@
 					<th><label for="movieFilmRate">관람가등급나이</label></th>
 					<td>
 						<select class="form-control" id="movieFilmRate" name="movieFilmRate" style="width:150px">
-								<option value="all">전체관람가</option>
-								<option value="12">12세 이상 관람가</option>
-								<option value="15">15세 이상 관람가</option>
-								<option value="17">청소년 관람불가</option>
+							<option value="all">전체관람가</option>
+							<option value="12">12세 이상 관람가</option>
+							<option value="15">15세 이상 관람가</option>
+							<option value="17">청소년 관람불가</option>
 						</select>						
 					</td>
 				</tr>
