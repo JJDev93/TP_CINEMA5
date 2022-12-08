@@ -24,6 +24,11 @@
    
    <input type="submit" value="로그인" class="enjoy_button" onclick="return LoginCheck()">
    
+   <tr>
+      <td colspan="2" >${message}</td>
+    
+   </tr>
+   
    </fieldset>
    
    </form>
