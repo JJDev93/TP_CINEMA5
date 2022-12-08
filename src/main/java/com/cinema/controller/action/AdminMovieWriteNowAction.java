@@ -26,14 +26,7 @@ public class AdminMovieWriteNowAction implements Action{
 		MovieVO movieVo = new MovieVO();
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, uploadFileSizeLimit, encType, policy);
-			
-			Enumeration multiFiles = multi.getFileNames();
-			while(multiFiles.hasMoreElements()) {
-				String multiFile  = (String)multiFiles.nextElement();
-				String stillcutName = multi.getFilesystemName(multiFile);
-				System.out.println("file_name : " + stillcutName);
-			}
-							
+					
 			movieVo.setTitle(multi.getParameter("movieTitle"));
 			movieVo.setPoster(multi.getFilesystemName("moviePoster"));
 			movieVo.setStillcut(multi.getParameter("stillcutList"));

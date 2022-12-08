@@ -30,6 +30,12 @@ public class ActionFactory {
 			action = new AdminMovieWriteNowAction();
 		}else if(command.equals("admin_movie_view")) {
 			action = new AdminMovieViewAction();
+		}else if(command.equals("admin_movie_update")) {
+			action = new AdminMovieUpdateAction();
+		}else if(command.equals("admin_movie_update_now")) {
+			action = new AdminMovieUpdateNowAction();
+		}else if(command.equals("admin_movie_delete_now")) {
+			action = new AdminMoviDeleteNowAction();
 		}else if(command.equals("member_login")){
 			action = new MemberloginAction();
 		}else if(command.equals("join_now")) {
