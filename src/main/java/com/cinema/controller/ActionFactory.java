@@ -40,6 +40,11 @@ public class ActionFactory {
 			action = new MemberLogoutAction();
 		}else if(command.equals("mypage_view")) {
 			action = new MypageviewFormAction();
+		}else if(command.equals("mypage_now")) {
+			action = new MypageNowAction();
+		}else if(command.equals("member_idcheck")) {
+			action = new MemberIdcheckAction(); 
+
 		}
 		return action;
 	}

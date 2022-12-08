@@ -58,7 +58,8 @@ public class MemberDAO {
       return list;
 
    }
-
+   
+   //회원가입 메소드
    public void insertMbo(MemberVO mvo) {
       String sql = "insert into member(id,pass,name,birth,gender,email,phone) values(?,?,?,?,?,?,?)";
 
@@ -84,6 +85,7 @@ public class MemberDAO {
 
    }
 
+   //사용자 인증시 사용하느 메소드
    public int userCheck(String id , String pass) {
       int result = 1;
       String sql = "select pass from member where id=?";
@@ -95,6 +97,7 @@ public class MemberDAO {
       try {
          conn = DBManager.getConnection();
          pstmt = conn.prepareStatement(sql);
+         pstmt.setString(1, id);
          rs = pstmt.executeQuery();
          
          if(rs.next()) {
@@ -147,13 +150,62 @@ public class MemberDAO {
          }
          return mvo;
       }
+      
+      //회원 정보 수정
+      public int updateMember(MemberVO mvo) {
+    	  int result = -1;
+    	  String sql ="update member set pass=? , name=? , email=? , phone=? where id=?";
+    	  
+    	  Connection conn = null;
+    	  PreparedStatement pstmt = null;
+    	  
+    	  try {
+    		  conn = DBManager.getConnection();
+              pstmt = conn.prepareStatement(sql);
+              pstmt.setString(1, mvo.getPass());
+              pstmt.setString(2, mvo.getName());
+              pstmt.setString(3, mvo.getEmail());
+              pstmt.setString(4, mvo.getPhone());
+              pstmt.setString(5, mvo.getId());
+              
+              result = pstmt.executeUpdate();
+    	  }catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+		return result;
+      }
+      
+      
+      public int confrmID(String id) {
+    	  int result = 1;
+    	  String sql = "select id from member where id=?";
+    	  Connection conn = null;
+    	  PreparedStatement pstmt = null;
+    	  ResultSet rs = null;
+    	  
+    	  try {
+    		  conn = DBManager.getConnection();
+    		  pstmt = conn.prepareStatement(sql);
+    		  pstmt.setString(1, id);
+    		  rs = pstmt.executeQuery();
+    		  if(rs.next()) {
+    			  result = 1; //아이디 있음
+    		  }else {
+    			  result = -1; //아이디 없음
+    		  }
+    		  
+    	  }catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return result;
+    	  
+      }
    
    
-   
-   
-   
-   
-   
-   
+
 
 }
