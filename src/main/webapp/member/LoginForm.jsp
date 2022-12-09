@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="/include/header.jsp"%>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script type="text/javascript" src="js/member.js"></script>
 <section class="subcon wid loginPage">
 
@@ -16,8 +17,10 @@
    <fieldset class="enjoy_member">
    <p>아이디 비밀번호를 입력하신 후,로그인 버튼을 클릭해주세요</p> <br>
    <div>
-     <span>아이디:</span>
-     <input type="text" title="아이디" id="id" name="id" value="${id}"> <br><br>
+     <span>아이디:
+     
+     <input type="text" title="아이디" id="id" name="id" value="${id}">
+     </span> <br><br>
      <span>비밀번호:</span>
      <input type="password" title="비밀번호" id="pass" name="pass">
    </div>
