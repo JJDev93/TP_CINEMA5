@@ -78,13 +78,26 @@
    height: 35px;
    margin: 0 10px 0 10px;
 }
-.yyy , .ddd {
-   width: 120px;
+.birth {
+   width: 400px;
    height: 30px;
 }
+
+.pwed1 , .pwed2 , .pwed3{
+	width: 400px; 
+	height: 30px;
+	margin-bottom: 10px;
+	margin-top: 5px; 
+}
+.phoneNO{
+	width: 400px; 
+	height: 30px;
+}
+
+
 .gen{
    border:1px solid #d5d4cd; width:100%; height:34px; margin-top:10px;
 }
 .int_email{margin-top:10px;}
-.email{ border:1px solid #d5d4cd; width: 275px; height: 30px; }
+.email{ border:1px solid #d5d4cd; width: 400px; height: 30px; }
 .email_line{ border:1px solid #d5d4cd; height: 34px; }
