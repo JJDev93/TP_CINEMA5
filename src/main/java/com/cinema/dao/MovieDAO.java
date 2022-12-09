@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.cinema.util.DBManager;
 import com.cinema.vo.MovieVO;
 
@@ -74,6 +73,7 @@ public class MovieDAO {
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
 					movieVo = new MovieVO();
+					movieVo.setMovieCode(rs.getInt("movieCode"));
 					movieVo.setTitle(rs.getString("title"));
 					movieVo.setPoster(rs.getString("poster"));
 					movieVo.setStillcut(rs.getString("stillcut"));
@@ -101,7 +101,7 @@ public class MovieDAO {
 	}
 	
 	//하나의 게시글을 삽입하는 메소드
-	public void insertBoard(MovieVO movieVo){
+	public void insertMovie(MovieVO movieVo){
 		String sql="insert into "+ tbl_name +"(movieCode, title, poster, stillcut, scenario, genre, director, cast, openDate, filmRate, runningTime, screening) values(null,?,?,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -125,5 +125,51 @@ public class MovieDAO {
 		} finally {
 			DBManager.close(conn, pstmt);			
 		}		
+	}
+	
+	//update문
+	public void updateMovie(MovieVO movieVo) {
+		String sql = "update "+ tbl_name +" set title=?, poster=?, stillcut=?, scenario=?, genre=?, director=?, cast=?, openDate=?, filmRate=?, runningTime=?, screening=? where movieCode=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, movieVo.getTitle());
+			pstmt.setString(2, movieVo.getPoster());
+			pstmt.setString(3, movieVo.getStillcut());
+			pstmt.setString(4, movieVo.getScenario());
+			pstmt.setString(5, movieVo.getGenre());
+			pstmt.setString(6, movieVo.getDirector());
+			pstmt.setString(7, movieVo.getCast());
+			pstmt.setString(8, movieVo.getOpenDate());
+			pstmt.setInt(9, movieVo.getFilmRate());
+			pstmt.setInt(10, movieVo.getRunningTime());
+			pstmt.setBoolean(11, movieVo.isScreening());
+			pstmt.setInt(12, movieVo.getMovieCode());			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
+	
+	
+	//delete문
+	public void deleteMovie(String movieCode) {
+		String sql = "delete from " + tbl_name + " where movieCode=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);			
+			pstmt.setString(1, movieCode);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
 	}
 }

@@ -81,34 +81,16 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							  <!-- Indicators -->
-							  <ol class="carousel-indicators">
-							    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-							  </ol>							
-							  <!-- Wrapper for slides -->
-							  <div class="carousel-inner" role="listbox">
-							    <div class="item active">
-									<script>
-										var stillCutList = "${movie.stillcut}";
-										var stillCutWords = stillCutList.split(',');
-										for (var i = 0; i < stillCutWords.length; i++) {
-											document.write("<img src=\"upload/" + stillCutWords[i] + "\">");
-										}
-									</script>
-							    </div>
-							  </div>							
-							  <!-- Controls -->
-							  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-							    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-							    <span class="sr-only">Previous</span>
-							  </a>
-							  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-							    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							    <span class="sr-only">Next</span>
-							  </a>
+							<div class="stillcutDiv">
+							<script>
+								var stillCutList = "${movie.stillcut}";
+								var stillCutWords = stillCutList.split(',');
+								for (var i = 0; i < stillCutWords.length; i++) {
+									document.write("<div class=\"stillcutItem\">");
+									document.write("<img src=\"upload/" + stillCutWords[i] + "\">");
+									document.write("</div>");
+								}
+							</script>
 							</div>
 						</td>
 					</tr>
@@ -122,7 +104,7 @@
 		</div>
 		<div class="pull-right">
 			<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary">수정</a>
-			<a href="CinemaServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger">삭제</a>
+			<a href="CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}" class="btn btn-danger">삭제</a>
 		</div>
 	</div>
 </div>

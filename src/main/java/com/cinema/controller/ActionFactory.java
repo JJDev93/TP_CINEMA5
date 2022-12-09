@@ -50,7 +50,6 @@ public class ActionFactory {
 			action = new MypageNowAction();
 		}else if(command.equals("member_idcheck")) {
 			action = new MemberIdcheckAction(); 
-
 		}
 		return action;
 	}

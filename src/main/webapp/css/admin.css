@@ -6,3 +6,6 @@
 .table tbody th{ background-color: #f8f8f8;}
 .table tbody .trPoster{max-width:100px}
 .table tbody .trPoster img{display:block;width: 100%;}
+.table tbody .stillcutDiv{display: flex; flex-wrap: wrap;}
+.table tbody .stillcutDiv .stillcutItem{flex: 1 1 40%; padding: 5px;}
+.table tbody .stillcutDiv img{display:block;width: 100%;}

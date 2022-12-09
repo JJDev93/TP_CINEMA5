@@ -26,7 +26,17 @@ public class AdminMovieWriteNowAction implements Action{
 		MovieVO movieVo = new MovieVO();
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, uploadFileSizeLimit, encType, policy);
-					
+			
+			Enumeration files = multi.getFileNames();
+			while(files.hasMoreElements()) {
+				String file = (String)files.nextElement();
+				String file_name = multi.getFilesystemName(file);
+				//중복된 파일이 업로드 된 경우 파일명을 바꿈
+				String ori_file_name = multi.getOriginalFileName(file);
+				System.out.println("file_name : " + file_name);
+			}
+			System.out.println("uploadFilePath : " + uploadFilePath);
+			
 			movieVo.setTitle(multi.getParameter("movieTitle"));
 			movieVo.setPoster(multi.getFilesystemName("moviePoster"));
 			movieVo.setStillcut(multi.getParameter("stillcutList"));
@@ -43,7 +53,7 @@ public class AdminMovieWriteNowAction implements Action{
 		}
 		
 		MovieDAO movieDao = MovieDAO.getInstance();
-		movieDao.insertBoard(movieVo);
+		movieDao.insertMovie(movieVo);
 		
 		new AdminMovieListAction().execute(request, response);
 		

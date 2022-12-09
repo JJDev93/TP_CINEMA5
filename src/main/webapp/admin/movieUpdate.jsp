@@ -26,7 +26,7 @@
 		<h2>영화정보 수정</h2>
 	</div>
 	<form name="frm" method="post" enctype="multipart/form-data" action="CinemaServlet?command=admin_movie_update_now">
-		<input type="hidden" name="num" value="${movie.movieCode}">
+		<input type="hidden" name="movieCode" value="${movie.movieCode}">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -39,7 +39,7 @@
 				</tr>
 				<tr>
 					<th><label for="moviePoster">포스터</label></th>
-					<td><input type="file" class="form-control" id="moviePoster" name="moviePoster"></td>
+					<td><input type="file" class="form-control" id="moviePoster" name="moviePoster" value="${movie.poster}"></td>
 				</tr>
 				<tr>
 					<th><label for="movieScenario">시나리오</label></th>
@@ -98,6 +98,13 @@
 						</div>
 					</td>
 				</tr>
+				<tr>
+					<th><label for="movieStillcut">스틸컷</label></th>
+					<td>
+						<input multiple="multiple" type="file" class="form-control" name="stillcut[]" id="movieStillcut">
+						<input type="hidden" class="form-control" name="stillcutList" id="stillcutList" value="${movie.stillcut}">
+					</td>
+				</tr>
 			</tbody>
 		</table>
 		<div class="text-center">
@@ -105,9 +112,27 @@
 				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
 			</div>
 			<div class="pull-right">
-				<input class="btn btn-primary" type="submit" value="등록" onclick="return moviewWriteCheck()"> 
+				<input class="btn btn-primary" type="submit" value="등록" onclick="return movieUpdateCheck()"> 
 			</div>
 		</div>
 	</form>
 </div>
 <%@ include file="/include/admin_footer.jsp"%>
+
+<script>
+	$(document).ready( function() {
+	    $("input[type=file]").change(function () {
+	        var InputStillcut = document.getElementById("movieStillcut");        
+	        var files = InputStillcut.files;
+	        var file;
+	        var StillcutNameList = "";
+	        for (var i = 0; i < files.length; i++) {
+	            file = files[i];
+	            StillcutNameList += "," + file.name;
+	        }
+	        var StillcutName = StillcutNameList.substring(1); //맨앞에 , 빼기
+            //alert(StillcutName);
+            $('#stillcutList').val(StillcutName);
+	    });
+	}); 
+</script>

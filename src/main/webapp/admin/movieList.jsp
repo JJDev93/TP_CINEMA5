@@ -57,7 +57,7 @@
 						<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
 					</td>
 					<td class="text-center">
-						<a href="CinemaServlet?command=admin_movie_delet_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
+						<a href="CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
 					</td>
 				</tr>
 				</c:forEach>

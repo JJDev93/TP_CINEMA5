@@ -3,23 +3,6 @@
 <%@ include file="/include/admin_header.jsp"%>
 <script type="text/javascript" src="js/movie.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script>
-	$(document).ready( function() {
-	    $("input[type=file]").change(function () {
-	        var InputStillcut = document.getElementById("movieStillcut");        
-	        var files = InputStillcut.files;
-	        var file;
-	        var StillcutNameList = "";
-	        for (var i = 0; i < files.length; i++) {
-	            file = files[i];
-	            StillcutNameList += "," + file.name;
-	        }
-	        var StillcutName = StillcutNameList.substring(1); //맨앞에 , 빼기
-            //alert(StillcutName);
-            $('#stillcutList').val(StillcutName);
-	    });
-	}); 
-</script>
 <div class="container adminCon">
 	<div class="page-header">
 		<h2>상영영화 등록</h2>
@@ -111,7 +94,7 @@
 				<tr>
 					<th><label for="movieStillcut">스틸컷</label></th>
 					<td>
-						<input multiple="multiple" type="file" class="form-control" id="movieStillcut">
+						<input multiple="multiple" type="file" class="form-control" name="stillcut[]" id="movieStillcut">
 						<input type="hidden" class="form-control" value="" name="stillcutList" id="stillcutList">
 					</td>
 				</tr>
@@ -127,4 +110,21 @@
 		</div>
 	</form>
 </div>
+<script>
+	$(document).ready( function() {
+	    $("input[type=file]").change(function () {
+	        var InputStillcut = document.getElementById("movieStillcut");        
+	        var files = InputStillcut.files;
+	        var file;
+	        var StillcutNameList = "";
+	        for (var i = 0; i < files.length; i++) {
+	            file = files[i];
+	            StillcutNameList += "," + file.name;
+	        }
+	        var StillcutName = StillcutNameList.substring(1); //맨앞에 , 빼기
+            //alert(StillcutName);
+            $('#stillcutList').val(StillcutName);
+	    });
+	}); 
+</script>
 <%@ include file="/include/admin_footer.jsp"%>
