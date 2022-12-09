@@ -46,6 +46,7 @@ function JoinCheck(){
 		return false;
 	}
 	
+	
 	if (document.Join.name.value == "") {
 		alert("이름을 써주세요");
 		Join.name.focus();
@@ -95,17 +96,23 @@ function idok() {
 }
 
 
-function MemberChange(){
-	if (document.Join.id.value == 0) {
+function MemberChange() {
+	if(document.Join.id.value == 0) {
 		alert("아이디를 써주세요");
 		Join.id.focus();
 		return false;
-
 	}
+	
+	if(document.Join.pwed1.value != document.Join.pwed4.value){
+		alert("현재비밀번호가 일치하지 않습니다");
+		Join.pwed2.focus();
+		return false;
+	}
+	
 	
 	if(document.Join.pwed2.value != document.Join.pwed3.value){
 		alert("비밀번호가 일치하지 않습니다");
-		Join.pwed1.focus();
+		Join.pwed2.focus();
 		return false;
 	}
 	
