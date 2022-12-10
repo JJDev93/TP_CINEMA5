@@ -23,15 +23,15 @@ values(null, 'title', 'poster', 'stillcut', 'scenario', 'genre', 'director', 'ca
 
 
 create table member(
-id varchar(10) not null primary key,
-pass varchar(10) not null,
-name varchar(24),
-birth timestamp,
-lev char(1) default 'A',
-gender char(1) default '1',
-email varchar(20),
-phone varchar(30),
-regdate timestamp default now()  
+	id varchar(10) not null primary key,
+	pass varchar(10) not null,
+	name varchar(24),
+	birth timestamp,
+	lev char(1) default 'A',
+	gender char(1) default '1',
+	email varchar(20),
+	phone varchar(30),
+	regdate timestamp default now()  
 );
 insert into member values('asas1234','1234','최촤','2019.10.21','A','1','dfs12@fsdf','010-2222-2222',now());
 insert into member values('admin','123456','관리지','1989.01.25','B','S','fdsf@131','010-2222-5555',now());

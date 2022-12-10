@@ -4,7 +4,6 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.cinema.dao.MemberDAO;
 import com.cinema.vo.MemberVO;
 
@@ -23,12 +22,12 @@ public class JoinNowAction implements Action{
       mvo.setGender(request.getParameter("gender"));
       mvo.setEmail(request.getParameter("email"));
       mvo.setPhone(request.getParameter("phoneNo"));
+      
+      System.out.println(mvo);
 
       MemberDAO mdao = MemberDAO.getInstance();
       mdao.insertMbo(mvo);
-      System.out.println(mvo);
       
       new MemberloginAction().execute(request, response);
    }
-
 }

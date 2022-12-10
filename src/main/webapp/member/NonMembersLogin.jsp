@@ -5,9 +5,9 @@
 <section class="subcon wid loginPage">
 	<h2>비회원 예매</h2>
 	<ul class="loginLink clear">
-		<li><a href="JoinForm.jsp">로그인</a></li>
-		<li class="on"><a href="NonMembersLogin.jsp">비회원 예매</a></li>
-		<li><a href="">비회원 예매확인</a></li>
+		<li><a href="CinemaServlet?command=member_login">로그인</a></li>
+		<li class="on"><a href="CinemaServlet?command=nonMember_login">비회원 예매</a></li>
+		<li><a href="" onclick="return noPage()">비회원 예매확인</a></li>
 	</ul>
 	<form action="" method="post" name="nonMemberLoin_frm">
 		<div class="login_con01">

@@ -2,7 +2,7 @@
  * <input type="text" name="emailID" onkeyup="noKorean()" size="15">
  */
  
- function noKorean() {
+function noKorean() {
 	const regex = /^[ㄱ-ㅎ|가-힣]+$/;
 	let str = frm2.emailID.value;//value 값 가져와서
 	let last_char = str.substr(str.length-1, 1);//마지막 입력글자 가져와서
@@ -25,28 +25,22 @@ function LoginCheck(){
    return true;
 }
 
-
 function JoinCheck(){
 	if (document.Join.id.value == 0) {
 		alert("아이디를 써주세요");
 		Join.id.focus();
 		return false;
-
-	}
-	
+	}	
 	if (document.Join.pwed1.value == ""){
 		alert("암호를 반드시 입력해주세여");
 		Join.pwed1.focus();
 		return false;
-	}
-	
+	}	
 	if(document.Join.pwed1.value != document.Join.pswd2.value){
 		alert("암호가 일치하지 않습니다");
 		Join.pwed1.focus();
 		return false;
-	}
-	
-	
+	}	
 	if (document.Join.name.value == "") {
 		alert("이름을 써주세요");
 		Join.name.focus();
@@ -71,13 +65,9 @@ function JoinCheck(){
 		alert("전화번호를 입력해주세요");
 		Join.name.focus();
 		return false;
-	}
-	
-	return true;
-	
-	
+	}	
+	return true;	
 }
-
 
 function idCheck() {
 	if (document.Join.id.value == "") {
@@ -95,32 +85,26 @@ function idok() {
 	self.close();
 }
 
-
 function MemberChange() {
 	if(document.Join.id.value == 0) {
 		alert("아이디를 써주세요");
 		Join.id.focus();
 		return false;
-	}
-	
+	}	
 	if(document.Join.pwed1.value != document.Join.pwed4.value){
 		alert("현재비밀번호가 일치하지 않습니다");
 		Join.pwed2.focus();
 		return false;
-	}
-	
-	
+	}	
 	if(document.Join.pwed2.value != document.Join.pwed3.value){
 		alert("비밀번호가 일치하지 않습니다");
 		Join.pwed2.focus();
 		return false;
-	}
-	
+	}	
 	if (document.Join.name.value == 0) {
 		alert("이름를 써주세요");
 		Join.name.focus();
 		return false;
-
 	}
 	if (document.Join.email.value == "") {
 		alert("이메일을 입력해주세요");
@@ -134,9 +118,3 @@ function MemberChange() {
 	}
 	return true;
 }
-
-
-
-
-
-

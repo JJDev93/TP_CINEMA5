@@ -9,10 +9,15 @@ a{ display: block; color:#404040;}
 .hdTop h1 img{ display: block; width: 100%; }
 .hdTop .topLink{ position: absolute; top: 50%; right: 0; transform: translateY(-50%); text-align: center;  }
 .hdTop .topLinkUl > li{ padding-left: 20px; }
+.hdTop .topLinkUl > li.userName span{ color: #fb4357; }
 .hdTop .topLinkUl .spanTxt{ display: block; letter-spacing: -1px; font-size: 12px; transition: color 0.5s; }
 .hdTop .topLinkUl .material-symbols-outlined{ color: #5c5c5c; vertical-align: middle; font-size: 27px; transition: color 0.2s; }
 .hdTop .topLinkUl > li:hover .spanTxt{ color: #fb4357; }
 .hdTop .topLinkUl > li:hover .material-symbols-outlined{ color: #fb4357; }
+
+
+.hdTop .topLink_left{ position: absolute; top: 50%; left: 105px; transform: translateY(-50%); text-align: center; }
+.hdTop .topLink_left > li.userName{ font-size:12px; }
 
 /* Search창 */
 #searchTop{ display: none; }

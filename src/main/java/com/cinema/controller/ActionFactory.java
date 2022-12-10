@@ -50,6 +50,8 @@ public class ActionFactory {
 			action = new MypageNowAction();
 		}else if(command.equals("member_idcheck")) {
 			action = new MemberIdcheckAction(); 
+		}else if(command.equals("nonMember_login")) {
+			action = new NonMemberLoginAction(); 
 		}
 		return action;
 	}
