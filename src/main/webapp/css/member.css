@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
 /* 비회원 예매하기 */
-.loginPage h2{ font-size:30px; font-weight:700; text-align:center; color: #fb4357; margin-bottom:50px; }
-.loginPage h3{ font-weight:500; margin-bottom:10px; }
-
 .loginPage .loginLink{ border-bottom:1px solid #b8b6aa; margin-bottom:50px; }
 .loginPage .loginLink li{ display:block; margin-right:2px; }
 .loginPage .loginLink li a{ display:block; background: #898987; color: #fdfcf0; text-align: center;	 padding:10px 15px; border-radius: 5px 5px 0 0; }

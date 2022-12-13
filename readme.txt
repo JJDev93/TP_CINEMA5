@@ -1,6 +1,9 @@
 create database cinema;
 use cinema;
 
+============================================
+영화 정보 테이블
+============================================
 create table tbl_movieInfo (
 	movieCode int(10) not null auto_increment primary key COMMENT '영화코드',
 	title varchar(20) not null COMMENT '영화제목',
@@ -21,7 +24,9 @@ insert into tbl_movieinfo(movieCode, title, poster, stillcut, scenario, genre, d
 values(null, 'title', 'poster', 'stillcut', 'scenario', 'genre', 'director', 'cast', '2020.12.05', 15, 350, true);
 
 
-
+============================================
+멤버 정보 테이블
+============================================
 create table member(
 	id varchar(10) not null primary key,
 	pass varchar(10) not null,
@@ -35,3 +40,57 @@ create table member(
 );
 insert into member values('asas1234','1234','최촤','2019.10.21','A','1','dfs12@fsdf','010-2222-2222',now());
 insert into member values('admin','123456','관리지','1989.01.25','B','S','fdsf@131','010-2222-5555',now());
+
+
+============================================
+영화관 정보 테이블
+============================================
+drop table tbl_theater;
+create table tbl_theater(
+	theaterCode int(10) not null auto_increment PRIMARY KEY COMMENT '영화관 코드',
+	theaterName varchar(200) not null COMMENT '영화관이름'
+);
+insert into tbl_theater values(null, '5조 영화관 종로점');
+select * from tbl_theater;
+
+
+============================================
+상영관 정보 테이블
+============================================
+drop table tbl_audi;
+create table tbl_audi(
+	audiCode int(10) not null auto_increment PRIMARY KEY COMMENT '상영관코드',
+    audiName varchar(200) not null COMMENT '상영관이름',
+	theaterCode int(10) not null COMMENT '영화관코드',
+	FOREIGN KEY(theaterCode)
+	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE
+);
+insert into tbl_audi values(null, '1관', 1);
+select * from tbl_audi;
+
+
+============================================
+좌석 정보 테이블
+============================================
+drop table tbl_seat;
+create table tbl_seat(
+	seatCode int(10) not null auto_increment PRIMARY KEY COMMENT '좌석코드',
+    seatName varchar(200) not null COMMENT '좌석명',
+    seatUse BOOLEAN not null default 0 COMMENT '예약유무',
+    audiCode int(10) not null COMMENT '상영관코드',
+    theaterCode int(10) not null COMMENT '영화관 코드',
+	FOREIGN KEY(theaterCode)
+	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE,    
+	FOREIGN KEY(audiCode)
+	REFERENCES tbl_audi(audiCode) ON UPDATE CASCADE
+);
+select * from tbl_seat;
+insert into tbl_seat values(null, 'A01', 0, 1, 1);
+insert into tbl_seat values(null, 'A02', 0, 1, 1);
+insert into tbl_seat values(null, 'A03', 0, 1, 1);
+insert into tbl_seat values(null, 'A04', 0, 1, 1);
+insert into tbl_seat values(null, 'A05', 0, 1, 1);
+insert into tbl_seat values(null, 'A06', 0, 1, 1);
+insert into tbl_seat values(null, 'A07', 0, 1, 1);
+insert into tbl_seat values(null, 'A08', 0, 1, 1);
+insert into tbl_seat values(null, 'A09', 0, 1, 1);
