@@ -2,7 +2,7 @@
 <%@ include file="/include/header.jsp"%>
 <section class="subcon wid">
 
-   dsdsd
+   
 
 </section>
 <%@ include file="/include/footer.jsp"%>

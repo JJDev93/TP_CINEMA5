@@ -59,7 +59,7 @@
 						</li>
 						<li><a href="CinemaServlet?command=main_page" data-text="예매"></a>
 							<ul class="depth02">
-								<li><a href="CinemaServlet?command=main_page">빠른예매</a></li>
+								<li><a href="CinemaServlet?command=ticket_page">빠른예매</a></li>
 								<li><a href="" onclick="return noPage()">상영스케쥴</a></li>
 								<li><a href="" onclick="return noPage()">English Ticketing</a></li>
 								<li><a href="" onclick="return noPage()">English Schedule</a></li>

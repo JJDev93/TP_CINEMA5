@@ -20,8 +20,8 @@ public class ActionFactory {
 			action = new MemberJoinFormAction();
 		}else if(command.equals("admin_member_list")) {
 			action = new AdminMemberListAction();
-		}else if(command.equals("admin_cinema_list")) {
-			action = new AdminCinemaListAction();
+		}else if(command.equals("admin_schedule_list")) {
+			action = new AdminScheduleListAction();
 		}else if(command.equals("admin_movie_list")) {
 			action = new AdminMovieListAction();
 		}else if(command.equals("admin_movie_wirte")) {
@@ -52,6 +52,10 @@ public class ActionFactory {
 			action = new MemberIdcheckAction(); 
 		}else if(command.equals("nonMember_login")) {
 			action = new NonMemberLoginAction(); 
+		}else if(command.equals("ticket_page")) {
+			action = new TicketPageAction();
+		}else if(command.equals("scheduleList_write")) {
+			action = new ScheduleListWriteAction();
 		}
 		return action;
 	}

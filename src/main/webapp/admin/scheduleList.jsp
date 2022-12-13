@@ -5,7 +5,7 @@
 	<div class="jumbotron">
 		<h1>Cinema</h1>
 		<p>영화관을 등록하고 관리하는 페이지 입니다.</p>
-		<p><a class="btn btn-primary btn-lg" href="#" role="button">신규 영화관 등록</a></p>
+		<p><a class="btn btn-primary btn-lg" href="CinemaServlet?command=scheduleList_write" role="button" >신규 영화관 등록</a></p>
 	</div>
 	<div class="page-header">
 		<h2>영화관 목록</h2>
@@ -14,46 +14,26 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>id</th>
-				<th>이름</th>
-				<th>전화번호</th>
+				<th>상열날짜</th>
+				<th>상열시간</th>
+				<th>가격</th>
 				<th>수정</th>
 				<th>삭제</th>
 			</tr>
 		</thead>
 		<tbody>
+		<c:forEach var="schedule" items="${schedule}">
 			<tr>
-				<td></td>
+			
+<%-- 				<td>${schedule.scheduleCode }</td> --%>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
 			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-			</tr>
+			</c:forEach>
+
 		</tbody>
 	</table>
 	<nav class="text-center">
