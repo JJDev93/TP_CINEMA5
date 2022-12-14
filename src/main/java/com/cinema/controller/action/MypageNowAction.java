@@ -15,7 +15,6 @@ public class MypageNowAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
-//		String pass1 = request.getParameter("pwed1");
 		String pass = request.getParameter("pwed2");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
@@ -23,7 +22,6 @@ public class MypageNowAction implements Action{
 		
 		MemberVO mvo = new MemberVO();
 		mvo.setId(id);
-//		mvo.setPass(pass1);
 		mvo.setPass(pass);
 		mvo.setName(name);
 		mvo.setEmail(email);
@@ -33,7 +31,6 @@ public class MypageNowAction implements Action{
 		mdao.updateMember(mvo);
 		
 		new MemberLogoutAction().execute(request, response);
-//		new MemberloginAction().execute(request, response);
 		
 	}
 

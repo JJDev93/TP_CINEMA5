@@ -14,23 +14,26 @@
 		<thead>
 			<tr>
 				<th>#</th>
+				<th>영하제목</th>
 				<th>상열날짜</th>
-				<th>상열시간</th>
+				<th>상영시간</th>
 				<th>가격</th>
 				<th>수정</th>
 				<th>삭제</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach var="schedule" items="${schedule}">
 			<tr>
-			
-<%-- 				<td>${schedule.scheduleCode }</td> --%>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary">수정</button></td>
+				<td>${schedule.scheduleCode }</td>
+				<td>${schedule.movietitle }</td>
+				<td>${schedule.onDate }</td>
+				<td>${schedule.onTime }</td>
+				<td>${schedule.price }</td>
+				<td class="text-center"><button type="button" class="btn btn-sm btn-primary" onclick="location.href='CinemaServlet?command=schedule_list_col'">수정</button></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
+				
 			</tr>
 			</c:forEach>
 

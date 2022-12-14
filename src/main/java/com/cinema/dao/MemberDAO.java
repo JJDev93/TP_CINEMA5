@@ -193,37 +193,5 @@ public class MemberDAO {
 	   }
 	   return result;
    }
-   
-   public SchduleVO scheduleVO(int scheduleCode) {
-	   SchduleVO svo = null;
-	   String sql = "select * from member where SchduleVO =?";
-
-	   Connection conn = null;
-	   ResultSet rs = null;
-	   PreparedStatement pstmt = null;
-	   try {
-		   conn = DBManager.getConnection();
-		   pstmt = conn.prepareStatement(sql);
-		   pstmt.setInt(1, scheduleCode);
-		   rs = pstmt.executeQuery();
-
-		   if (rs.next()) {
-			   svo = new SchduleVO();
-			   
-
-		   }
-	   } catch (Exception e) {
-		   e.printStackTrace();
-	   } finally {
-		   DBManager.close(conn, pstmt, rs);
-	   }
-	   return svo;
-   }
-   
-   
-   
-   
-   
-   
-		 
+   	 
 }

@@ -5,10 +5,10 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <div class="container adminCon">
 	<div class="page-header">
-		<h2>상영영화 등록</h2>
+		<h2>상영영화 수정</h2>
 	</div>
 	<form name="frm" method="post" action="CinemaServlet">
-		<input type="hidden" name="command" value="schedule_now">
+		<input type="hidden" name="command" value="schedulecorr_now">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -18,13 +18,9 @@
 			
 				<tr>
 				
-					<th><label for="movieGenre">상영영화</label></th>
+					<th><label for="movietitle">상영영화</label></th>
 					<td>
-						<select class="form-schedule" id="movietitle" name="movietitle" style="width:150px">
-						<c:forEach var="movie" items="${movieList}">
-							<option>${movie.title}</option>
-							</c:forEach>
-						</select>
+						<input type="text" class="form-schedule" id="movietitle" name="movietitle" style="width:150px">
 					</td>
 				</tr>
 				<tr>

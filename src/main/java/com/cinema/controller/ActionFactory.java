@@ -53,9 +53,15 @@ public class ActionFactory {
 		}else if(command.equals("nonMember_login")) {
 			action = new NonMemberLoginAction(); 
 		}else if(command.equals("ticketing_step1")) {
-			action = new TicketingStep01Action(); 
+			action = new TicketingStep01Action();
 		}else if(command.equals("scheduleList_write")) {
 			action = new ScheduleListWriteAction();
+		}else if(command.equals("schedule_now")) {
+			action = new ScheduleNowAction();
+		}else if(command.equals("schedule_list_col")) {
+			action = new ScheduleListColAction();
+		}else if(command.equals("schedulecorr_now")) {
+			action = new ScheduleCorrNowAction();
 		}
 		return action;
 	}
