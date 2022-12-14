@@ -52,15 +52,10 @@ public class ActionFactory {
 			action = new MemberIdcheckAction(); 
 		}else if(command.equals("nonMember_login")) {
 			action = new NonMemberLoginAction(); 
-<<<<<<< HEAD
 		}else if(command.equals("ticketing_step1")) {
 			action = new TicketingStep01Action(); 
-=======
-		}else if(command.equals("ticket_page")) {
-			action = new TicketPageAction();
 		}else if(command.equals("scheduleList_write")) {
 			action = new ScheduleListWriteAction();
->>>>>>> 22fefac590189bb9578ed6765a2c6a73fe00584d
 		}
 		return action;
 	}
