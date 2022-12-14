@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/include/header.jsp"%>
 <section class="subcon wid">
-<<<<<<< HEAD
 	<h2>빠른예매</h2>
 	<div class="ticketDiv clear">
 		<div class="ticketTab">
@@ -46,10 +45,5 @@
 			</div>
 		</div>
 	</div>
-=======
-
-   
-
->>>>>>> 22fefac590189bb9578ed6765a2c6a73fe00584d
 </section>
 <%@ include file="/include/footer.jsp"%>
