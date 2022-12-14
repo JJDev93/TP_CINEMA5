@@ -94,3 +94,19 @@ insert into tbl_seat values(null, 'A06', 0, 1, 1);
 insert into tbl_seat values(null, 'A07', 0, 1, 1);
 insert into tbl_seat values(null, 'A08', 0, 1, 1);
 insert into tbl_seat values(null, 'A09', 0, 1, 1);
+
+
+============================================
+예매 테이블
+============================================
+CREATE TABLE schedule (
+   scheduleCode INT(10) NOT NULL auto_increment primary key COMMENT'상영코드',
+   movietitle varchar(20) not null,
+   onDate   DATE NOT NULL COMMENT'상영날짜',
+   onTime   TIME NOT NULL COMMENT'상영시간',
+   audicode INT(10) NOT NULL COMMENT'상영관코드',
+   movieCode INT(10) NOT NULL COMMENT'영화코드',
+   price INT(5) not NULL COMMENT'가격'
+);
+insert into schedule values(null,'movietitle','2022-10-11','10:30:35' , '2' ,'1' ,'12000');
+select * from schedule;
