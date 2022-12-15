@@ -10,22 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.cinema.dao.ScheduleDAO;
 import com.cinema.vo.SchduleVO;
 
-public class ScheduleListColAction implements Action{
+public class ScheduleDeleteNowAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/admin/schedulecorrection.jsp";
+		String url ="/admin/scheduleList.jsp";
 		
 		int scheduleCode = Integer.parseInt(request.getParameter("scheduleCode"));
 		
 		ScheduleDAO sdao = ScheduleDAO.getInstance();
-		SchduleVO svo = sdao.selectScheduleByCode(scheduleCode);
-		
-		request.setAttribute("schedule", svo);
+		sdao.deleteSchedule(scheduleCode);
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		new AdminScheduleListAction().execute(request, response);
 		
 	}
 
