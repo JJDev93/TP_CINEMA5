@@ -60,7 +60,7 @@
 				<th><label for="movieScreening">상영여부</label></th>
 				<td>
 					<c:choose>
-						<c:when test="${movie.screening == true}">상영중</c:when>
+						<c:when test="${movie.screening == 1}">상영중</c:when>
 						<c:otherwise>상영종료</c:otherwise>
 					</c:choose>			
 				</td>

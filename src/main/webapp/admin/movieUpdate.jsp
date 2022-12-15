@@ -2,24 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/include/admin_header.jsp"%>
-<%
-	ArrayList<String> genreList = new ArrayList<String>();
-	genreList.add("액션");
-	genreList.add("범죄");
-	genreList.add("SF");
-	genreList.add("코미디");
-	genreList.add("슬랩스틱 코미디");
-	genreList.add("로맨스 코미디");
-	genreList.add("스릴러");
-	genreList.add("공포");
-	genreList.add("전쟁");
-	genreList.add("스포츠");
-	genreList.add("판타지");
-	genreList.add("음악");
-	genreList.add("뮤지컬");
-	genreList.add("멜로");
-	genreList.add("기타");
-%>
 <script type="text/javascript" src="js/movie.js"></script>
 <div class="container adminCon">
 	<div class="page-header">
@@ -52,11 +34,21 @@
 					<th><label for="movieGenre">장르</label></th>
 					<td>
 						<select class="form-control" id="movieGenre" name="movieGenre" style="width:150px">
-							<% 
-								for (int i=0; i<genreList.size(); i++){ 
-							%>
-								<option value="<%=genreList.get(i)%>" <c:if test="${movie.genre eq 'genreList.get(i)'}">selected</c:if>><%=genreList.get(i)%></option>
-							<% } %>
+							<option value="액션" <c:if test="${movie.genre eq '액션'}">selected</c:if>>액션</option>
+							<option value="범죄" <c:if test="${movie.genre eq '범죄'}">selected</c:if>>범죄</option>
+							<option value="SF" <c:if test="${movie.genre eq 'SF'}">selected</c:if>>SF</option>
+							<option value="코미디" <c:if test="${movie.genre eq '코미디'}">selected</c:if>>코미디</option>
+							<option value="슬랩스틱 코미디" <c:if test="${movie.genre eq '슬랩스틱 코미디'}">selected</c:if>>슬랩스틱 코미디</option>
+							<option value="로맨스 코미디" <c:if test="${movie.genre eq '로맨스 코미디'}">selected</c:if>>로맨스 코미디</option>
+							<option value="스릴러" <c:if test="${movie.genre eq '스릴러'}">selected</c:if>>스릴러</option>
+							<option value="공포" <c:if test="${movie.genre eq '공포'}">selected</c:if>>공포</option>
+							<option value="전쟁" <c:if test="${movie.genre eq '전쟁'}">selected</c:if>>전쟁</option>
+							<option value="스포츠" <c:if test="${movie.genre eq '스포츠'}">selected</c:if>>스포츠</option>
+							<option value="판타지" <c:if test="${movie.genre eq '판타지'}">selected</c:if>>판타지</option>
+							<option value="음악" <c:if test="${movie.genre eq '음악'}">selected</c:if>>음악</option>
+							<option value="뮤지컬" <c:if test="${movie.genre eq '뮤지컬'}">selected</c:if>>뮤지컬</option>
+							<option value="멜로" <c:if test="${movie.genre eq '멜로'}">selected</c:if>>멜로</option>
+							<option value="기타" <c:if test="${movie.genre eq '기타'}">selected</c:if>>기타</option>
 						</select>			
 					</td>
 				</tr>
@@ -76,10 +68,10 @@
 					<th><label for="movieFilmRate">관람가등급나이</label></th>
 					<td>
 						<select class="form-control" id="movieFilmRate" name="movieFilmRate" style="width:150px">
-							<option value="all">전체관람가</option>
-							<option value="12">12세 이상 관람가</option>
-							<option value="15">15세 이상 관람가</option>
-							<option value="17">청소년 관람불가</option>
+							<option value="0" <c:if test="${movie.filmRate eq 0}">selected</c:if>>전체관람가</option>
+							<option value="12" <c:if test="${movie.filmRate eq 12}">selected</c:if>>12세 이상 관람가</option>
+							<option value="15" <c:if test="${movie.filmRate eq 15}">selected</c:if>>15세 이상 관람가</option>
+							<option value="17" <c:if test="${movie.filmRate eq 17}">selected</c:if>>청소년 관람불가</option>
 						</select>						
 					</td>
 				</tr>
@@ -92,12 +84,12 @@
 					<td>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="movieScreening" id="movieScreening1" value="1" checked>
+						    <input type="radio" name="movieScreening" id="movieScreening1" value="1" <c:if test="${movie.screening eq 1}">checked</c:if>>
 						    상영
 						  </label>
 						  &nbsp;&nbsp;&nbsp;
 						  <label>
-						    <input type="radio" name="movieScreening" id="movieScreening1" value="0">
+						    <input type="radio" name="movieScreening" id="movieScreening1" value="0" <c:if test="${movie.screening eq 0}">checked</c:if>>
 						    종료
 						  </label>
 						</div>

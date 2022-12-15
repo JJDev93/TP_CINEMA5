@@ -24,7 +24,6 @@ public class AdminMovieUpdateNowAction implements Action{
 		String movieCode = multi.getParameter("movieCode");
 		String RunningTime = multi.getParameter("movieRunningTime");
 		String screening = multi.getParameter("movieScreening");
-		System.out.println(screening);
 		MovieVO movieVo = new MovieVO();
 		try {
 			movieVo.setMovieCode(Integer.parseInt(movieCode));
