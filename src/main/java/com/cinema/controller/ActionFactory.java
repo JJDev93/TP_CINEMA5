@@ -62,6 +62,8 @@ public class ActionFactory {
 			action = new ScheduleListColAction();
 		}else if(command.equals("schedulecorr_now")) {
 			action = new ScheduleCorrNowAction();
+		}else if(command.equals("schedule_delete")) {
+			action = new ScheduleDeleteNowAction();
 		}
 		return action;
 	}

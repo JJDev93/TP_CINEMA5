@@ -101,9 +101,8 @@ public class ScheduleDAO {
 		
 	}
 	
-	public int updateSchedule(SchduleVO svo) {
-		int result = -1;
-		String sql ="update schedule set onDate=? ,onTime=? ,price=? where movietitle=? ";
+	public void updateSchedule(SchduleVO svo) {
+		String sql ="update schedule set movietitle=?, onDate=? , onTime=? , price=? where scheduleCode=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -111,18 +110,76 @@ public class ScheduleDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, svo.getOnDate());
-			pstmt.setString(2, svo.getOnTime());
-			pstmt.setInt(3, svo.getPrice());
-			pstmt.setString(4, svo.getMovietitle());
 			
-			result = pstmt.executeUpdate();
+			pstmt.setString(1, svo.getMovietitle());
+			pstmt.setString(2, svo.getOnDate());
+			pstmt.setString(3, svo.getOnTime());
+			pstmt.setInt(4, svo.getPrice());
+			pstmt.setInt(5, svo.getScheduleCode());
+
+			pstmt.executeUpdate();
 		}catch (Exception e) {
 			 e.printStackTrace();
 		}finally {
 			DBManager.close(conn, pstmt);
 		}
-		return result;
+		
+	}
+	
+	
+	public SchduleVO selectScheduleByCode(int scheduleCode) {
+		String sql = "select * from schedule where scheduleCode=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		SchduleVO svo = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, scheduleCode);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				svo = new SchduleVO();
+				
+				svo.setScheduleCode(rs.getInt("scheduleCode"));
+				svo.setMovietitle(rs.getString("movietitle"));
+				svo.setOnDate(rs.getString("onDate"));
+				svo.setOnTime(rs.getString("onTime"));
+				svo.setAudicode(rs.getInt("audicode"));
+				svo.setMovieCode(rs.getInt("movieCode"));
+				svo.setPrice(rs.getInt("price"));
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return svo;
+	}
+	
+	public void deleteSchedule(int scheduleCode) {
+		String sql = "delete from schedule where scheduleCode=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn =DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, scheduleCode);
+			
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
 	}
 	
 	

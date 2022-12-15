@@ -31,12 +31,10 @@
 				<td>${schedule.onDate }</td>
 				<td>${schedule.onTime }</td>
 				<td>${schedule.price }</td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary" onclick="location.href='CinemaServlet?command=schedule_list_col'">수정</button></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-danger">삭제</button></td>
-				
+				<td class="text-center"><button type="button" class="btn btn-sm btn-primary" onclick="location.href='CinemaServlet?command=schedule_list_col&scheduleCode=${schedule.scheduleCode}'" >수정</button></td>
+				<td class="text-center"><button type="button" class="btn btn-sm btn-danger" onclick="location.href='CinemaServlet?command=schedule_delete&scheduleCode=${schedule.scheduleCode}'">삭제</button></td>
 			</tr>
-			</c:forEach>
-
+		</c:forEach>
 		</tbody>
 	</table>
 	<nav class="text-center">
