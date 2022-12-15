@@ -22,11 +22,14 @@ public class AdminMovieUpdateNowAction implements Action{
 		
 		MultipartRequest multi = new MultipartRequest(request, uploadFilePath, uploadFileSizeLimit, encType, policy);	
 		String movieCode = multi.getParameter("movieCode");
+		String RunningTime = multi.getParameter("movieRunningTime");
+		String screening = multi.getParameter("movieScreening");
+		System.out.println(screening);
 		MovieVO movieVo = new MovieVO();
 		try {
 			movieVo.setMovieCode(Integer.parseInt(movieCode));
 			movieVo.setTitle(multi.getParameter("movieTitle"));
-			movieVo.setPoster(multi.getFilesystemName("moviePoster"));
+			movieVo.setPoster(multi.getParameter("moviePoster"));
 			movieVo.setStillcut(multi.getParameter("stillcutList"));
 			movieVo.setScenario(multi.getParameter("movieScenario"));
 			movieVo.setGenre(multi.getParameter("movieGenre"));	
@@ -34,15 +37,15 @@ public class AdminMovieUpdateNowAction implements Action{
 			movieVo.setCast(multi.getParameter("movieCast"));	
 			movieVo.setOpenDate(multi.getParameter("movieOpenDate"));	
 			movieVo.setFilmRate(Integer.parseInt(multi.getParameter("movieFilmRate")));
-			movieVo.setRunningTime(Integer.parseInt(multi.getParameter("movieRunningTime")));
-			movieVo.setScreening(Boolean.parseBoolean(multi.getParameter("movieScreening")));
+			movieVo.setRunningTime(Integer.parseInt(RunningTime));
+			movieVo.setScreening(Integer.parseInt(screening));
 		} catch (Exception e) {
 			System.out.println("예외발생 : " + e);
 		}		
 		MovieDAO movieDao = MovieDAO.getInstance();
 		movieDao.updateMovie(movieVo);
-		System.out.println(movieVo);
+		//System.out.println(movieVo);
 		
-		new AdminMovieViewAction().execute(request, response);		
+		new AdminMovieListAction().execute(request, response);		
 	}
 }

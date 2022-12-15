@@ -1,12 +1,9 @@
 package com.cinema.vo;
 
-import java.util.Date;
-
 public class MovieVO {
-	private int movieCode, spectators, filmRate, runningTime;
+	private int movieCode, spectators, filmRate, runningTime, screening;
 	private String title, poster, stillcut, scenario, genre, director, cast, openDate;
 	private float grade;
-	private boolean screening;
 	public int getMovieCode() {
 		return movieCode;
 	}
@@ -30,6 +27,12 @@ public class MovieVO {
 	}
 	public void setRunningTime(int runningTime) {
 		this.runningTime = runningTime;
+	}
+	public int getScreening() {
+		return screening;
+	}
+	public void setScreening(int screening) {
+		this.screening = screening;
 	}
 	public String getTitle() {
 		return title;
@@ -85,18 +88,11 @@ public class MovieVO {
 	public void setGrade(float grade) {
 		this.grade = grade;
 	}
-	public boolean isScreening() {
-		return screening;
-	}
-	public void setScreening(boolean screening) {
-		this.screening = screening;
-	}
-	
 	@Override
 	public String toString() {
 		return "MovieVO [movieCode=" + movieCode + ", spectators=" + spectators + ", filmRate=" + filmRate
-				+ ", runningTime=" + runningTime + ", title=" + title + ", poster=" + poster + ", stillcut=" + stillcut
-				+ ", scenario=" + scenario + ", genre=" + genre + ", director=" + director + ", cast=" + cast
-				+ ", openDate=" + openDate + ", grade=" + grade + ", screening=" + screening + "]";
-	}	
+				+ ", runningTime=" + runningTime + ", screening=" + screening + ", title=" + title + ", poster="
+				+ poster + ", stillcut=" + stillcut + ", scenario=" + scenario + ", genre=" + genre + ", director="
+				+ director + ", cast=" + cast + ", openDate=" + openDate + ", grade=" + grade + "]";
+	}
 }

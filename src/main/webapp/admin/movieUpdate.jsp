@@ -39,7 +39,10 @@
 				</tr>
 				<tr>
 					<th><label for="moviePoster">포스터</label></th>
-					<td><input type="file" class="form-control" id="moviePoster" name="moviePoster" value="${movie.poster}"></td>
+					<td>
+						<input type="file" class="form-control" id="moviePosterInput">
+						<input type="text" class="form-control" id="moviePoster" name="moviePoster" value="${movie.poster}">
+					</td>
 				</tr>
 				<tr>
 					<th><label for="movieScenario">시나리오</label></th>
@@ -49,10 +52,12 @@
 					<th><label for="movieGenre">장르</label></th>
 					<td>
 						<select class="form-control" id="movieGenre" name="movieGenre" style="width:150px">
-							<% for (int i=0; i<genreList.size(); i++){ %>
-								<option value="<%=genreList.get(i)%>" <c:if test="${movie.genre eq genreList.get(i)}">selected="selected"</c:if>><%=genreList.get(i)%></option>
+							<% 
+								for (int i=0; i<genreList.size(); i++){ 
+							%>
+								<option value="<%=genreList.get(i)%>" <c:if test="${movie.genre eq 'genreList.get(i)'}">selected</c:if>><%=genreList.get(i)%></option>
 							<% } %>
-						</select>
+						</select>			
 					</td>
 				</tr>
 				<tr>
@@ -102,7 +107,7 @@
 					<th><label for="movieStillcut">스틸컷</label></th>
 					<td>
 						<input multiple="multiple" type="file" class="form-control" name="stillcut[]" id="movieStillcut">
-						<input type="hidden" class="form-control" name="stillcutList" id="stillcutList" value="${movie.stillcut}">
+						<input type="text" class="form-control" name="stillcutList" id="stillcutList" value="${movie.stillcut}">
 					</td>
 				</tr>
 			</tbody>
@@ -118,10 +123,14 @@
 	</form>
 </div>
 <%@ include file="/include/admin_footer.jsp"%>
-
 <script>
 	$(document).ready( function() {
-	    $("input[type=file]").change(function () {
+		$("#moviePosterInput").change(function () {
+	        var InputPoster = document.getElementById("moviePosterInput");     
+	        var Posterfile = InputPoster.files[0].name;
+            $('#moviePoster').val(Posterfile);
+	    });
+	    $("#movieStillcut").change(function () {
 	        var InputStillcut = document.getElementById("movieStillcut");        
 	        var files = InputStillcut.files;
 	        var file;

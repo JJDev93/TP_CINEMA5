@@ -112,7 +112,7 @@
 </div>
 <script>
 	$(document).ready( function() {
-	    $("input[type=file]").change(function () {
+	    $("#movieStillcut").change(function () {
 	        var InputStillcut = document.getElementById("movieStillcut");        
 	        var files = InputStillcut.files;
 	        var file;

@@ -90,7 +90,13 @@
 			<div class="ticketHd">시간</div>
 			<div class="ticketList">
 				<ul>
-					<li></li>
+					<c:forEach var="schdule" items="${schduleList}">
+						<li class="" data-theaterCode="${schdule.scheduleCode}">
+							${schdule.movietitle}
+							${schdule.onDate}
+							${schdule.onTime}
+						</li>									
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

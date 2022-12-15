@@ -47,7 +47,7 @@ public class AdminMovieWriteNowAction implements Action{
 			movieVo.setOpenDate(multi.getParameter("movieOpenDate"));	
 			movieVo.setFilmRate(Integer.parseInt(multi.getParameter("movieFilmRate")));
 			movieVo.setRunningTime(Integer.parseInt(multi.getParameter("movieRunningTime")));
-			movieVo.setScreening(Boolean.parseBoolean(multi.getParameter("movieScreening")));
+			movieVo.setScreening(Integer.parseInt(multi.getParameter("movieScreening")));
 		} catch (Exception e) {
 			System.out.println("예외발생 : " + e);
 		}

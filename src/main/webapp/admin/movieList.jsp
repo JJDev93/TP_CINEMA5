@@ -52,7 +52,17 @@
 					<td>${movie.filmRate}</td>
 					<td>${movie.runningTime}</td>
 					<td>${movie.grade}</td>
-					<td>${movie.screening}</td>
+					<td>
+						<c:choose>
+							<c:when test="${movie.screening eq 1}">
+								상영중
+							</c:when>
+							<c:otherwise>
+								상영중지								
+							</c:otherwise>
+						</c:choose>
+					
+					</td>
 					<td class="text-center">
 						<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
 					</td>

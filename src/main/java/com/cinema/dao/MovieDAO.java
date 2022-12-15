@@ -45,7 +45,7 @@ public class MovieDAO {
 				movieVo.setFilmRate(rs.getInt("filmRate"));
 				movieVo.setRunningTime(rs.getInt("runningTime"));
 				movieVo.setGrade(rs.getFloat("grade"));
-				movieVo.setScreening(rs.getBoolean("screening"));
+				movieVo.setScreening(rs.getInt("screening"));
 				list.add(movieVo);
 			}
 		} catch (Exception e) {
@@ -86,7 +86,7 @@ public class MovieDAO {
 					movieVo.setFilmRate(rs.getInt("filmRate"));
 					movieVo.setRunningTime(rs.getInt("runningTime"));
 					movieVo.setGrade(rs.getFloat("grade"));
-					movieVo.setScreening(rs.getBoolean("screening"));
+					movieVo.setScreening(rs.getInt("screening"));
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -118,7 +118,7 @@ public class MovieDAO {
 			pstmt.setString(8, movieVo.getOpenDate());
 			pstmt.setInt(9, movieVo.getFilmRate());
 			pstmt.setInt(10, movieVo.getRunningTime());
-			pstmt.setBoolean(11, movieVo.isScreening());
+			pstmt.setInt(11, movieVo.getScreening());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -145,7 +145,7 @@ public class MovieDAO {
 			pstmt.setString(8, movieVo.getOpenDate());
 			pstmt.setInt(9, movieVo.getFilmRate());
 			pstmt.setInt(10, movieVo.getRunningTime());
-			pstmt.setBoolean(11, movieVo.isScreening());
+			pstmt.setInt(11, movieVo.getScreening());
 			pstmt.setInt(12, movieVo.getMovieCode());			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -153,6 +153,7 @@ public class MovieDAO {
 		} finally {
 			DBManager.close(conn, pstmt);
 		}
+		
 	}
 	
 	
