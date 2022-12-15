@@ -8,8 +8,8 @@
 		<h2>상영영화 수정</h2>
 	</div>
 	<form name="frm" method="post" action="CinemaServlet">
-		<input type="hidden" name="command" value="schedulecorr_now">
-		
+		<input type="hidden" name="command" value="schedulecorr_now"> 
+		<input type="hidden" name="scheduleCode" value="${schedule.scheduleCode}">
 		<table class="table table-bordered table-hover">
 		    <colgroup>
 		       <col style="width:200px;">
@@ -20,9 +20,7 @@
 				<tr>
 				
 					<th><label for="movietitle">상영영화</label></th>
-					<td>
-						<input type="text" class="form-schedule" id="movietitle" name="movietitle" value="${schedule.movietitle }" style="width:150px">
-					</td>
+					<td>${schedule.movietitle}</td>
 				</tr>
 				<tr>
 					<th><label for="movieOpenDate">상영날짜</label></th>
@@ -43,11 +41,10 @@
 		</table>
 		<div class="text-center">
 			<div class="pull-left">
-				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
+				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_schedule_list'">
 			</div>
 			<div class="pull-right">
-				<input class="btn btn-primary" type="submit" value="등록" onclick="return ScheduleCheck()"> 
-				<input type="hidden" name="scheduleCode" value="${schedule.scheduleCode}">
+				<input class="btn btn-primary" type="submit" value="등록" onclick="return ScheduleCheck()">
 			</div>
 		</div>
 	</form>

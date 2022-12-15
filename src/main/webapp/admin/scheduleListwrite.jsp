@@ -21,8 +21,8 @@
 					<th><label for="movieGenre">상영영화</label></th>
 					<td>
 						<select class="form-schedule" id="movietitle" name="movietitle" style="width:150px">
-						<c:forEach var="movie" items="${movieList}">
-							<option>${movie.title}</option>
+							<c:forEach var="movie" items="${movieList}">
+								<option value="${movie.movieCode}">${movie.title}</option>
 							</c:forEach>
 						</select>
 					</td>

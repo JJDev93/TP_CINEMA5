@@ -81,7 +81,7 @@ public class ScheduleDAO {
 	
 	
 	public void insertSbo(SchduleVO svo) {
-		String sql = "insert into schedule(scheduleCode,Movietitle,onDate,onTime,audicode,movieCode,price) values(null,?,?,?,1,1,?)";
+		String sql = "insert into schedule(scheduleCode,Movietitle,onDate,onTime,audicode,movieCode,price) values(null,?,?,?,1,?,?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -91,7 +91,8 @@ public class ScheduleDAO {
 			pstmt.setString(1, svo.getMovietitle());
 			pstmt.setString(2, svo.getOnDate());
 			pstmt.setString(3, svo.getOnTime());
-			pstmt.setInt(4, svo.getPrice());
+			pstmt.setInt(4, svo.getMovieCode());
+			pstmt.setInt(5, svo.getPrice());
 			pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -102,7 +103,7 @@ public class ScheduleDAO {
 	}
 	
 	public void updateSchedule(SchduleVO svo) {
-		String sql ="update schedule set movietitle=?, onDate=? , onTime=? , price=? where scheduleCode=?";
+		String sql ="update schedule set onDate=? , onTime=?, movieCode=?, price=? where scheduleCode=?";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -111,9 +112,9 @@ public class ScheduleDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, svo.getMovietitle());
-			pstmt.setString(2, svo.getOnDate());
-			pstmt.setString(3, svo.getOnTime());
+			pstmt.setString(1, svo.getOnDate());
+			pstmt.setString(2, svo.getOnTime());
+			pstmt.setInt(3, svo.getMovieCode());
 			pstmt.setInt(4, svo.getPrice());
 			pstmt.setInt(5, svo.getScheduleCode());
 
