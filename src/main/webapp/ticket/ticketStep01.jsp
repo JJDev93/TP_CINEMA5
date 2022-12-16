@@ -102,6 +102,7 @@
 				<ul>
 					<c:forEach var="schdule" items="${schduleList}">
 						<li>
+							<p>${schdule.movietitle}</p>
 							${schdule.onDate}
 							${schdule.onTime}
 						</li>									

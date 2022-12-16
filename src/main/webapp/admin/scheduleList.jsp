@@ -29,19 +29,11 @@
 			<tr>
 				<td>${schedule.scheduleCode }</td>
 				<td>${schedule.movietitle }</td>
-<<<<<<< HEAD
-				<td>${schedule.onDate}</td>
-				<td>${schedule.onTime}</td>
-				<td>${schedule.price}</td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-primary" onclick="location.href='CinemaServlet?command=schedule_list_col&scheduleCode=${schedule.scheduleCode}'" >수정</button></td>
-				<td class="text-center"><button type="button" class="btn btn-sm btn-danger" onclick="location.href='CinemaServlet?command=schedule_delete&scheduleCode=${schedule.scheduleCode}'">삭제</button></td>
-=======
 				<td>${schedule.onDate }</td>
 				<td>${schedule.onTime }</td>
 				<td>${schedule.price }</td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-primary"  onclick="location.href='CinemaServlet?command=schedule_list_col&scheduleCode=${schedule.scheduleCode}'">수정</button></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-danger" id="delete" onclick=" location.href=('CinemaServlet?command=schedule_delete&scheduleCode=${schedule.scheduleCode}');">삭제</button></td>
->>>>>>> 58e5a73ee2cfa856d31be55e60d954fd629923be
 			</tr>
 		</c:forEach>
 		</tbody>
