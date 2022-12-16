@@ -118,3 +118,18 @@ function MemberChange() {
 	}
 	return true;
 }
+
+
+function DeleteMember(){
+	if(document.Join.pwed1.value != document.Join.pwed4.value){
+		alert("현재비밀번호가 일치하지 않습니다");
+		Join.pwed2.focus();
+		return false;
+	}	
+	var result = confirm("정말삭제하겠습니다까");
+	if(result==true){
+		
+	}
+}
+
+

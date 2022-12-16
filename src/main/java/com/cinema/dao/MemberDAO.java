@@ -193,5 +193,60 @@ public class MemberDAO {
 	   }
 	   return result;
    }
+   
+   public int deleteID(String id , String pass) {
+	   int result = 1;
+	   String sql = "delete from member where id=? and pass=?  ";
+	   
+	   Connection conn = null;
+	   PreparedStatement pstmt = null;
+	   
+	   try {
+		   conn = DBManager.getConnection();
+		   pstmt = conn.prepareStatement(sql);
+		   pstmt.setString(1, id);	
+		   pstmt.setString(2, pass);
+		   result= pstmt.executeUpdate();
+	   }catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		DBManager.close(conn, pstmt);
+	}
+	return result;  
+   }
+
+
+   public MemberVO FindID(String name , String phone) {
+	   String sql = "select id from member where name=? and phone";   
+	   Connection conn = null;
+	   PreparedStatement pstmt = null;
+	   ResultSet rs = null;
+	   MemberVO mvo = null;
+	  
+	   try {
+		   conn = DBManager.getConnection();
+		   pstmt = conn.prepareStatement(sql);
+		   pstmt.setString(1, name);
+		   pstmt.setString(2, phone);
+		   
+		   rs = pstmt.executeQuery();
+		   
+		   if(rs.next()) {
+			 mvo = new MemberVO();
+			 mvo.setName(rs.getString("name"));
+			 mvo.setPhone(rs.getString("phone"));
+		   }
+	   }catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		DBManager.close(conn, pstmt, rs);
+	}
+	return mvo;
+	
+   }
+   
+   
+   
+
    	 
 }
