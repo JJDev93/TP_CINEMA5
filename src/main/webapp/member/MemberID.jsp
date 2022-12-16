@@ -24,10 +24,10 @@
 					<div class="row_group">
 						<div class="join_row">
 							<h5 class="join_title">
-								<label for="email">이메일</label>
+								<label for="phone">전화번호</label>
 							</h5>
 							<span class="ps_box int_id"> 
-								<input type="text" title="이메일" id=email name="email" class="int" placeholder="등록한 이메일">
+								<input type="text" title="전화번호" id="phone" name="phone" class="int" placeholder="등록한 전화번호">
 							</span>
 						</div>
 					</div>

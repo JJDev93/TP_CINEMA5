@@ -17,6 +17,7 @@ public class MemberIDnowAction implements Action{
 		PrintWriter out = response.getWriter();
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
+		String id = request.getParameter("id");
 		
 		MemberDAO mdao = MemberDAO.getInstance();
 		MemberVO mvo = null;
@@ -24,10 +25,10 @@ public class MemberIDnowAction implements Action{
 		
 		if(mvo != null) {
 			 out.println("<script>alert('"+name+"님의 아이디는 "+mvo.getId()+"입니다.');"
-			            + "location.href='"+request.getContextPath()+"CinemaServlet?command=memberID_form'</script>");
+			            + "location.href='CinemaServlet?command=main_page'</script>");
 		}else {
 			out.println("<script>alert('아이디가 존재하지 않습니다.');"
-		            + "location.href='"+request.getContextPath()+"이동할 컨트롤러'</script>");
+		            + "location.href='CinemaServlet?command=main_page'</script>");
 		}
 	}
 

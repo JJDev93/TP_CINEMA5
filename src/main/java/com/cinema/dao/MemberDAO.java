@@ -217,7 +217,7 @@ public class MemberDAO {
 
 
    public MemberVO FindID(String name , String phone) {
-	   String sql = "select id from member where name=? and phone";   
+	   String sql = "select * from member where name=? and phone=?";   
 	   Connection conn = null;
 	   PreparedStatement pstmt = null;
 	   ResultSet rs = null;
@@ -235,6 +235,7 @@ public class MemberDAO {
 			 mvo = new MemberVO();
 			 mvo.setName(rs.getString("name"));
 			 mvo.setPhone(rs.getString("phone"));
+			 mvo.setId(rs.getString("id"));
 		   }
 	   }catch (Exception e) {
 		e.printStackTrace();
