@@ -1,13 +1,19 @@
 package com.cinema.vo;
 
 public class SchduleVO {
-	private int scheduleCode, audicode , movieCode , price;
+	private int scheduleCode, theaterCode, audicode , movieCode , price;
 	private String movietitle, onDate, onTime;
 	public int getScheduleCode() {
 		return scheduleCode;
 	}
 	public void setScheduleCode(int scheduleCode) {
 		this.scheduleCode = scheduleCode;
+	}
+	public int getTheaterCode() {
+		return theaterCode;
+	}
+	public void setTheaterCode(int theaterCode) {
+		this.theaterCode = theaterCode;
 	}
 	public int getAudicode() {
 		return audicode;
@@ -47,9 +53,8 @@ public class SchduleVO {
 	}
 	@Override
 	public String toString() {
-		return "SchduleVO [scheduleCode=" + scheduleCode + ", audicode=" + audicode + ", movieCode=" + movieCode
-				+ ", price=" + price + ", movietitle=" + movietitle + ", onDate=" + onDate + ", onTime=" + onTime + "]";
-	} 
-	
-	
+		return "SchduleVO [scheduleCode=" + scheduleCode + ", theaterCode=" + theaterCode + ", audicode=" + audicode
+				+ ", movieCode=" + movieCode + ", price=" + price + ", movietitle=" + movietitle + ", onDate=" + onDate
+				+ ", onTime=" + onTime + "]";
+	}
 }

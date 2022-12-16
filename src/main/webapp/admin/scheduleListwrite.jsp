@@ -15,9 +15,7 @@
 		       <col>
 		    </colgroup>
 			<tbody>
-			
-				<tr>
-				
+				<tr>				
 					<th><label for="movieGenre">상영영화</label></th>
 					<td>
 						<select class="form-schedule" id="movietitle" name="movietitle" style="width:150px">
@@ -40,13 +38,12 @@
 				<tr>
 				   <th><label for="moviePrice">가격</label> </th>
 				   <td><input type="text" class="form-schedule" id="price" name="price"> </td>
-				</tr>
-	
+				</tr>	
 			</tbody>
 		</table>
 		<div class="text-center">
 			<div class="pull-left">
-				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_movie_list'">
+				<input class="btn btn-default" type="reset" value="목록" onclick="location.href='CinemaServlet?command=admin_schedule_list'">
 			</div>
 			<div class="pull-right">
 				<input class="btn btn-primary" type="submit" value="등록" onclick="return moviescheduleCheck()"> 
@@ -54,5 +51,4 @@
 		</div>
 	</form>
 </div>
-
 <%@ include file="/include/admin_footer.jsp"%>

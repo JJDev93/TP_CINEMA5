@@ -34,8 +34,11 @@ public class TicketDAO {
 					scheduleVo = new SchduleVO();
 					scheduleVo.setScheduleCode(rs.getInt("scheduleCode"));
 					scheduleVo.setMovietitle(rs.getString("movietitle"));
-					scheduleVo.setOnTime(rs.getString("onDate"));
+					scheduleVo.setOnDate(rs.getString("onDate"));
 					scheduleVo.setOnTime(rs.getString("onTime"));
+					scheduleVo.setAudicode(rs.getInt("audicode"));
+					scheduleVo.setMovieCode(rs.getInt("movieCode"));
+					scheduleVo.setPrice(rs.getInt("price"));
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

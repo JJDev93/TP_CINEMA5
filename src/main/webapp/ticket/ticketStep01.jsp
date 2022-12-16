@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.Calendar"%>
-<%
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="java.util.Calendar" %>
+<%	
+	String paramMovieCode = request.getParameter("movieCode");
+	pageContext.setAttribute("paramMovieCode", paramMovieCode);
+	String paramTheaterCode = request.getParameter("theaterCode");
+	pageContext.setAttribute("paramTheaterCode", paramTheaterCode);
+	
  	request.setCharacterEncoding("utf-8");
  	Calendar cal=Calendar.getInstance(); //현재 시스템이 가지고 있는 날짜 데이터 가지고 오기
  	int y=cal.get(Calendar.YEAR);
@@ -18,7 +24,7 @@
  	m=cal.get(Calendar.MONTH)+1;
  	int w=cal.get(Calendar.DAY_OF_WEEK); //1(일)~7(토) => 일요일일때 w에 1. 메소드를 외우면 된다.
  %>
-<%@ include file="/include/header.jsp"%>
+<%@ include file="/include/header.jsp" %>
 <section class="subcon wid">
 	<h2>빠른예매</h2>
 	<div class="ticketDiv clear">
@@ -27,8 +33,8 @@
 			<div class="ticketList">
 				<ul>
 					<c:forEach var="movie" items="${movieList}">
-						<li class="" data-moivecode="${movie.movieCode}">
-							<a href="CinemaServlet?command=ticketing_select&movieCode=${movie.movieCode}">
+						<li <c:if test="${movie.movieCode eq paramMovieCode}">class="selected"</c:if>>
+							<a href="CinemaServlet?command=ticketing_step1&movieCode=${movie.movieCode}&theaterCode=${paramTheaterCode}">
 								<c:choose>
 									<c:when test="${movie.filmRate == 12}"><span class="filmRate rate12">${movie.filmRate}</span></c:when>
 									<c:when test="${movie.filmRate == 15}"><span class="filmRate rate15">${movie.filmRate}</span></c:when>
@@ -47,9 +53,11 @@
 			<div class="ticketList">
 				<ul>
 					<c:forEach var="theater" items="${theaterList}">
-						<li class="" data-theaterCode="${theater.theaterCode}">
-							${theater.theaterName}
-						</li>									
+						<a href="CinemaServlet?command=ticketing_step1&movieCode=${paramMovieCode}&theaterCode=${theater.theaterCode}">
+							<li <c:if test="${theater.theaterCode eq paramTheaterCode}">class="selected"</c:if>>
+								${theater.theaterName}
+							</li>	
+						</a>								
 					</c:forEach>
 				</ul>
 			</div>
@@ -83,8 +91,8 @@
 						}
 						out.print("<span class='" + dayNum + "'>" + i + "</span></li>");	
 						w++;
-					}	
-					%>	
+					}
+					%>
 				</ul>
 			</div>
 		</div>
@@ -93,8 +101,7 @@
 			<div class="ticketList">
 				<ul>
 					<c:forEach var="schdule" items="${schduleList}">
-						<li class="" data-theaterCode="${schdule.scheduleCode}">
-							${schdule.movietitle}
+						<li>
 							${schdule.onDate}
 							${schdule.onTime}
 						</li>									

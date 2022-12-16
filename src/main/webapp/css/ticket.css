@@ -16,6 +16,7 @@
 
 .ticketDiv .ticketTab .ticketList li:hover{ background-color:rgba(0,0,0,0.3); }
 .ticketDiv .ticketTab .ticketList li.selected{ background-color: #333333 !important; color:#ffffff !important; }
+.ticketDiv .ticketTab .ticketList li.selected a{ color:#ffffff !important; }
 
 .ticketDiv .ticketTab .ticketList .date li{text-align:center;padding: 5px 10px;}
 .ticketDiv .ticketTab .ticketList .date li:after{ display:block; content:""; clear:both; }

@@ -3,18 +3,18 @@
 <%@ include file="/include/admin_header.jsp"%>
 <div class="container adminCon">
 	<div class="jumbotron">
-		<h1>Cinema</h1>
-		<p>영화관을 등록하고 관리하는 페이지 입니다.</p>
-		<p><a class="btn btn-primary btn-lg" href="CinemaServlet?command=scheduleList_write" role="button" >신규 영화관 등록</a></p>
+		<h1>Schedule</h1>
+		<p>상영일정을 등록하고 관리하는 페이지 입니다.</p>
+		<p><a class="btn btn-primary btn-lg" href="CinemaServlet?command=scheduleList_write" role="button" >상영일정 등록</a></p>
 	</div>
 	<div class="page-header">
-		<h2>영화관 목록</h2>
+		<h2>상영일정 목록</h2>
 	</div>
 	<table class="table table-striped table-bordered table-hover">
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>영하제목</th>
+				<th>영화제목</th>
 				<th>상열날짜</th>
 				<th>상영시간</th>
 				<th>가격</th>
@@ -28,9 +28,9 @@
 			<tr>
 				<td>${schedule.scheduleCode }</td>
 				<td>${schedule.movietitle }</td>
-				<td>${schedule.onDate }</td>
-				<td>${schedule.onTime }</td>
-				<td>${schedule.price }</td>
+				<td>${schedule.onDate}</td>
+				<td>${schedule.onTime}</td>
+				<td>${schedule.price}</td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-primary" onclick="location.href='CinemaServlet?command=schedule_list_col&scheduleCode=${schedule.scheduleCode}'" >수정</button></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-danger" onclick="location.href='CinemaServlet?command=schedule_delete&scheduleCode=${schedule.scheduleCode}'">삭제</button></td>
 			</tr>

@@ -29,7 +29,7 @@ public class TicketingSelectAction implements Action{
 		
 		TicketDAO ticketDao = TicketDAO.getInstance();
 		SchduleVO schduleList = ticketDao.selectMovie(movieCode);
-		System.out.println(movieCode);
+		System.out.println(schduleList);
 		
 		request.setAttribute("movieList", movieList);
 		request.setAttribute("theaterList", theaterList);

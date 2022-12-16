@@ -61,7 +61,7 @@ create table tbl_audi(
     audiName varchar(200) not null COMMENT '상영관이름',
 	theaterCode int(10) not null COMMENT '영화관코드',
 	FOREIGN KEY(theaterCode)
-	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE
+	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE ON DELETE CASCADE
 );
 insert into tbl_audi values(null, '1관', 1);
 select * from tbl_audi;
@@ -78,9 +78,9 @@ create table tbl_seat(
     audiCode int(10) not null COMMENT '상영관코드',
     theaterCode int(10) not null COMMENT '영화관 코드',
 	FOREIGN KEY(theaterCode)
-	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE,    
+	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE ON DELETE CASCADE,    
 	FOREIGN KEY(audiCode)
-	REFERENCES tbl_audi(audiCode) ON UPDATE CASCADE
+	REFERENCES tbl_audi(audiCode) ON UPDATE CASCADE ON DELETE CASCADE
 );
 select * from tbl_seat;
 insert into tbl_seat values(null, 'A01', 0, 1, 1);
@@ -99,12 +99,18 @@ insert into tbl_seat values(null, 'A09', 0, 1, 1);
 ============================================
 CREATE TABLE schedule (
    scheduleCode INT(10) NOT NULL auto_increment primary key COMMENT'상영코드',
-   movietitle varchar(20) not null,
+   movietitle varchar(100) not null,
    onDate   DATE NOT NULL COMMENT'상영날짜',
    onTime   TIME NOT NULL COMMENT'상영시간',
-   audicode INT(10) NOT NULL COMMENT'상영관코드',
+   theaterCode INT(10) NOT NULL COMMENT'영화관코드',
+   audiCode INT(10) NOT NULL COMMENT'상영관코드',
    movieCode INT(10) NOT NULL COMMENT'영화코드',
-   price INT(5) not NULL COMMENT'가격'
+   price INT(5) not NULL COMMENT'가격',
+   FOREIGN KEY(theaterCode)
+	REFERENCES tbl_theater(theaterCode) ON UPDATE CASCADE ON DELETE CASCADE,    
+	FOREIGN KEY(audiCode)
+	REFERENCES tbl_audi(audiCode) ON UPDATE CASCADE ON DELETE CASCADE, 
+	FOREIGN KEY(movieCode)
+	REFERENCES tbl_movieInfo(movieCode) ON UPDATE CASCADE ON DELETE CASCADE
 );
-insert into schedule values(null,'movietitle','2022-10-11','10:30:35' , '2' ,'1' ,'12000');
 select * from schedule;

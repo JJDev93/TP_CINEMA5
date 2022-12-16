@@ -22,7 +22,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="CinemaServlet?command=admin_movie_list">영화관리</a></li>
 					<li><a href="CinemaServlet?command=admin_member_list">회원관리</a></li>
-					<li><a href="CinemaServlet?command=admin_schedule_list">영화관관리</a></li>
+					<li><a href="CinemaServlet?command=admin_schedule_list">상영일정관리</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right btn-logout">
 					<li><a href="CinemaServlet?command=member_logout" style="padding: 0;"><span class="btn btn-danger">로그아웃</span></a></li>
