@@ -35,7 +35,7 @@ public class LoginNowAction implements Action{
            request.setAttribute("message", "비밀번호가 맞지 않습니다");
            new MemberloginAction().execute(request, response);
         }else if(result ==-1) {
-           request.setAttribute("message", "존재하지 않는 아이다입나다");
+           request.setAttribute("message", "존재하지 않는 아이디입나다");
            new MemberloginAction().execute(request, response);
         }
 		

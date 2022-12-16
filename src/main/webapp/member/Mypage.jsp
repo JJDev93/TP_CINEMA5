@@ -16,7 +16,7 @@
                         <label for="id">아이디</label>
                      </h5>
                      <span class="ps_box int_id"> <input type="text" id="id"
-                        name="id" class="int" title="ID" maxlength="20" value="${loginUser.id}">
+                        name="id" class="int" title="ID" maxlength="20" value="${loginUser.id}" readonly="readonly">
 <!--                         <input type="button" value="중복체크" onclick="idCheck()"> -->
                      </span>
                   </div>
@@ -68,6 +68,7 @@
                   </span>
                </div>
                <input type="submit" value="변경하기" class="join_now bt_submit mainBgColor" onclick="return MemberChange()">
+               <input type="button" value="탈퇴하기" class="delete_now bt_submit mainBgColor" onclick="location.href='CinemaServlet?command=memberdelete_form'">
             </div>
          </div>
       </div>

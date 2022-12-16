@@ -64,6 +64,14 @@ public class ActionFactory {
 			action = new ScheduleCorrNowAction();
 		}else if(command.equals("schedule_delete")) {
 			action = new ScheduleDeleteNowAction();
+		}else if(command.equals("memberdelete_form")) {
+			action = new MemberdeleteFormAction();
+		}else if(command.equals("memberdelete_now")) {
+			action = new MemberdeleteNowAction();
+		}else if(command.equals("memberID_form")) {
+			action = new MemberIDFormAction();
+		}else if(command.equals("memberID_now")) {
+			action = new MemberIDnowAction();
 		}
 		return action;
 	}

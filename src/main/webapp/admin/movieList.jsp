@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/include/admin_header.jsp" %>
+<script type="text/javascript" src="js/movie.js"></script>
 	<div class="container adminCon">
 		<div class="jumbotron">
 			<h1>Movie</h1>
@@ -67,7 +68,7 @@
 						<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
 					</td>
 					<td class="text-center">
-						<a href="CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}" class="btn btn-danger btn-sm">삭제</a>
+						<td class="text-center"><button type="button" class="btn btn-sm btn-danger" id="delete" onclick="return (DeleteCheck()); location.href=('CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}'); ">삭제</button></td>
 					</td>
 				</tr>
 				</c:forEach>

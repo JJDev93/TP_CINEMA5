@@ -46,7 +46,18 @@ function ScheduleCheck(){
 	}
 }
 
+function DeleteCheck(){
+	var result = confirm("정말 삭제하시겠습니까?");
+	
+	if(result == true){
+		alert("삭제되었습니다");
+	}else if(result == false){
+		alert("취소되었습니다.")
+	}
+	
+	return result;	
 
+}
 
 
 

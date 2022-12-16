@@ -104,7 +104,7 @@
 		</div>
 		<div class="pull-right">
 			<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary">수정</a>
-			<a href="CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}" class="btn btn-danger">삭제</a>
+			<a href="CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode};" class="btn btn-danger">삭제</a>
 		</div>
 	</div>
 </div>

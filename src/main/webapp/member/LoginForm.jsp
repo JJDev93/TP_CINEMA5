@@ -36,6 +36,12 @@
 							</span>
 						</div>
 					</div>
+					<div class="row_group">
+					  <div class="join_search">
+					  <span><input type="button" title="아이디찾기" id="id_search" name="id_search" value="아이디 찾기" onclick="location.href='CinemaServlet?command=memberID_form'"> </span>
+					  <span><input type="button" title="비밀번호찾기" id="pass_search" name="pass_search" value="비밀번호 찾기"> </span>
+					  </div>
+					</div>
 					<input type="submit" value="로그인" class="enjoy_button join_now bt_submit mainBgColor" onclick="return LoginCheck()">
 				</div>
 			</div>
