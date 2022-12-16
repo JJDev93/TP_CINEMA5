@@ -27,15 +27,17 @@
 			<div class="ticketList">
 				<ul>
 					<c:forEach var="movie" items="${movieList}">
-						<li class="" data-moivecode="${movie.movieCode}">					
-							<c:choose>
-								<c:when test="${movie.filmRate == 12}"><span class="filmRate rate12">${movie.filmRate}</span></c:when>
-								<c:when test="${movie.filmRate == 15}"><span class="filmRate rate15">${movie.filmRate}</span></c:when>
-								<c:when test="${movie.filmRate == 18}"><span class="filmRate rate18">${movie.filmRate}</span></c:when>
-								<c:otherwise><span class="filmRate all">ALL</span></c:otherwise>
-							</c:choose>
-							${movie.title}
-						</li>									
+						<li class="" data-moivecode="${movie.movieCode}">
+							<a href="CinemaServlet?command=ticketing_select&movieCode=${movie.movieCode}">
+								<c:choose>
+									<c:when test="${movie.filmRate == 12}"><span class="filmRate rate12">${movie.filmRate}</span></c:when>
+									<c:when test="${movie.filmRate == 15}"><span class="filmRate rate15">${movie.filmRate}</span></c:when>
+									<c:when test="${movie.filmRate == 18}"><span class="filmRate rate18">${movie.filmRate}</span></c:when>
+									<c:otherwise><span class="filmRate all">ALL</span></c:otherwise>
+								</c:choose>
+								${movie.title}
+							</a>
+						</li>
 					</c:forEach>
 				</ul>
 			</div>

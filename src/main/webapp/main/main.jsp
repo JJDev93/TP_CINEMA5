@@ -8,59 +8,32 @@
         <iframe src="https://www.youtube.com/embed/IQXc6YyV7Fc?controls=0;loop=1;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="chartDiv">
-      <div class="wid">
-        <h2>무비차트</h2>
-        <div class="chartSlide">
-          <div class="chartMovie">
-            <a href="#" data-text="1"><img src="images/main/moive1.jpg" alt=""></a>
-            <div class="movieInfo">
-              <p class="tit">블랙 아담</p>
-              <p class="txt">
-                <span>예매율 16.7%</span>
-              </p>
-            </div>
-          </div>
-          <div class="chartMovie">
-            <a href="#" data-text="2"><img src="images/main/moive2.jpg" alt=""></a>
-            <div class="movieInfo">
-              <p class="tit">듄</p>
-              <p class="txt">
-                <span>예매율 8.8%</span>
-              </p>
-            </div>
-          </div>
-          <div class="chartMovie">
-            <a href="#" data-text="3"><img src="images/main/moive3.jpg" alt=""></a>
-            <div class="movieInfo">
-              <p class="tit">공조2-인터내셔날</p>
-              <p class="txt">
-                <span>예매율 7.8%</span>
-              </p>
-            </div>
-          </div>
-          <div class="chartMovie">
-            <a href="#" data-text="4"><img src="images/main/moive4.jpg" alt=""></a>
-            <div class="movieInfo">
-              <p class="tit">오펀-천사의 탄생</p>
-              <p class="txt">
-                <span>예매율 6.3%</span>
-              </p>
-            </div>
-          </div>
-          <div class="chartMovie">
-            <a href="#" data-text="5"><img src="images/main/moive5.jpg" alt=""></a>
-            <div class="movieInfo">
-              <p class="tit">인생은 아름다워</p>
-              <p class="txt">
-                <span>예매율 6.3%</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="eventDiv">
+	<div class="chartDiv">
+		<div class="wid">
+			<h2>무비차트</h2>
+			<div class="chartSlide">
+				<%
+				int i = 1;
+				%>
+				<c:forEach var="movie" items="${movieList}">
+					<div class="chartMovie">
+						<a href="#" data-text="<%=i%>"><img src="upload/${movie.poster}" alt=""></a>
+						<div class="movieInfo">
+							<p class="tit">${movie.title}</p>
+							<p class="txt">
+								<!-- <span>예매율 16.7%</span> -->
+								<span>${movie.genre}</span>
+							</p>
+						</div>
+					</div>
+					<%
+					i++;
+					%>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+	<div class="eventDiv">
       <div class="wid">
         <h2>이벤트</h2>
         <div class="eventList">

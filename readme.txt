@@ -18,10 +18,8 @@ create table tbl_movieInfo (
 	filmRate int(2) not null default 0 COMMENT '관람가등급나이',
 	runningTime int(5) not null default 0 COMMENT '러닝타임',
 	grade float(5) not null default 0 COMMENT '평점',
-	screening boolean not null default false COMMENT '상영여부'
+	screening int(1) not null default 0 COMMENT '상영여부'
 );
-insert into tbl_movieinfo(movieCode, title, poster, stillcut, scenario, genre, director, cast, openDate, filmRate, runningTime, screening) 
-values(null, 'title', 'poster', 'stillcut', 'scenario', 'genre', 'director', 'cast', '2020.12.05', 15, 350, true);
 
 
 ============================================
