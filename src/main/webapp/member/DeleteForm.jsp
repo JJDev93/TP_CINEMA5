@@ -32,8 +32,8 @@
                      </span>
                   </div>
                </div>
-               <input type="reset" value="취소하기" class="delete_now bt_submit mainBgColor" onclick="return MemberChange()">
-               <input type="submit" value="탈퇴하기" class="delete_now bt_submit mainBgColor" onclick="return DeleteMember()">
+               <input type="reset" value="취소하기" class="join_now bt_submit mainBgColor" onclick="location.href='CinemaServlet?command=mypage_view'">
+               <input type="submit" value="탈퇴하기" class="join_now bt_submit mainBgColor" onclick="return DeleteMember()">
             </div>
          </div>
       </div>

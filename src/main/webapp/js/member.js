@@ -97,7 +97,7 @@ function MemberChange() {
 		return false;
 	}	
 	if(document.Join.pwed2.value != document.Join.pwed3.value){
-		alert("비밀번호가 일치하지 않습니다");
+		alert("변경하는 비밀번호가 일치하지 않습니다");
 		Join.pwed2.focus();
 		return false;
 	}	

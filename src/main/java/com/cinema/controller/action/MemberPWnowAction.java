@@ -27,7 +27,7 @@ public class MemberPWnowAction implements Action{
 			 out.println("<script>alert('"+name+"님의 비밀번호는 "+mvo.getPass()+"입니다.');"
 			            + "location.href='CinemaServlet?command=member_login'</script>");
 		}else {
-			out.println("<script>alert('아이디가 존재하지 않습니다.');"
+			out.println("<script>alert('비빌번호가 존재하지 않습니다.');"
 		            + "location.href='CinemaServlet?command=main_page'</script>");
 		}
 		

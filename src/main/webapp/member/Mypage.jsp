@@ -69,7 +69,7 @@
                   </span>
                </div>
                <input type="submit" value="변경하기" class="join_now bt_submit mainBgColor" onclick="return MemberChange()">
-               <input type="button" value="탈퇴하기" class="delete_now bt_submit mainBgColor" onclick="location.href='CinemaServlet?command=memberdelete_form'">
+               <input type="button" value="탈퇴하기" class="join_now bt_submit mainBgColor" onclick="location.href='CinemaServlet?command=memberdelete_form'">
             </div>
          </div>
       </div>

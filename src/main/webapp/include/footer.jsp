@@ -27,7 +27,7 @@
             <p><span class="spanTxt">호스팅사업자</span><span>CJ올리브네트웍스</span></p>
             <p><span class="spanTxt">개인정보보호 책임자</span><span>최욱진</span></p>
             <p><span class="spanTxt">대표이메일</span><span>cine5@cine5.net</span></p>
-            <p><a href="CinemaServlet?command=admin_member_list">관리자</a></p>
+<!--             <p><a href="CinemaServlet?command=admin_member_list">관리자</a></p> -->
             <c:if test="${loginUser.lev == 'B'}">
             	<p><a href="CinemaServlet?command=admin_member_list">관리자</a></p>
             </c:if>         
