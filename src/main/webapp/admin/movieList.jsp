@@ -15,7 +15,6 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>코드</th>
 					<th>제목</th>
 					<th>포스터</th>
 					<th>장르</th>
@@ -31,10 +30,10 @@
 				</tr>
 			</thead>
 			<tbody>
+				<% int i=1; %>
 				<c:forEach var="movie" items="${movieList}">
 				<tr>
-					<td></td>
-					<td>${movie.movieCode}</td>
+					<td><%=i%></td>
 					<td><a href="CinemaServlet?command=admin_movie_view&movieCode=${movie.movieCode}">${movie.title}</a></td>
 					<td class="trPoster">
 						<c:choose>
@@ -68,9 +67,10 @@
 						<a href="CinemaServlet?command=admin_movie_update&movieCode=${movie.movieCode}" class="btn btn-primary btn-sm">수정</a>
 					</td>
 					<td class="text-center">
-						<td class="text-center"><button type="button" class="btn btn-sm btn-danger" id="delete" onclick="return (DeleteCheck()); location.href=('CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}'); ">삭제</button></td>
+						<button type="button" class="btn btn-sm btn-danger" id="delete" onclick="location.href=('CinemaServlet?command=admin_movie_delete_now&movieCode=${movie.movieCode}'); ">삭제</button>
 					</td>
 				</tr>
+				<% i++; %>
 				</c:forEach>
 			</tbody>
 		</table>
