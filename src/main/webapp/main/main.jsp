@@ -5,7 +5,9 @@
 <section id="bodyContainer">
     <div class="mainVisual">
       <div class="wid">
-        <iframe src="https://www.youtube.com/embed/IQXc6YyV7Fc?controls=0;loop=1;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video src="images/video.mp4" autoplay muted loop></video>
+        <!-- <div class="cover_background"></div> -->
+        <!-- <iframe src="https://www.youtube.com/embed/IQXc6YyV7Fc?controls=0;loop=1;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       </div>
     </div>
 	<div class="chartDiv">

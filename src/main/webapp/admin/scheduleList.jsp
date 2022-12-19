@@ -25,9 +25,10 @@
 			</tr>
 		</thead>
 		<tbody>
+		<% int i=1; %>
 		<c:forEach var="schedule" items="${schedule}">
 			<tr>
-				<td>${schedule.scheduleCode }</td>
+				<td><%=i%></td>
 				<td>${schedule.movietitle }</td>
 				<td>${schedule.onDate }</td>
 				<td>${schedule.onTime }</td>
@@ -35,6 +36,7 @@
 				<td class="text-center"><button type="button" class="btn btn-sm btn-primary"  onclick="location.href='CinemaServlet?command=schedule_list_col&scheduleCode=${schedule.scheduleCode}'">수정</button></td>
 				<td class="text-center"><button type="button" class="btn btn-sm btn-danger" id="delete" onclick=" location.href=('CinemaServlet?command=schedule_delete&scheduleCode=${schedule.scheduleCode}');">삭제</button></td>
 			</tr>
+			<% i++; %>
 		</c:forEach>
 		</tbody>
 	</table>
