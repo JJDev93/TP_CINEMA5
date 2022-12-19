@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/include/header.jsp"%>
 <script type="text/javascript" src="js/member.js"></script>
+
 <section class="subcon wid loginPage">
    <h2>마이페이지</h2>
    <form action="CinemaServlet" method="post" id="Join" class="member" name="Join">
@@ -25,7 +26,7 @@
                         <label for="pswd1">비밀번호</label>
                      </h5>
                      <span class="ps_box int_pass" id="pswdImg"> <input
-                        type="password" id="pwed1" name="pwed1" class="pwed1"
+                        type="text" id="pwed1" name="pwed1" class="pwed1"
                         title="비밀번호 입력" maxlength="20" placeholder="현재비밀번호" value="${loginUser.pass }">
                         <input type="hidden" id="pwed4" name="pwed4" value="${loginUser.pass}">
                         <input

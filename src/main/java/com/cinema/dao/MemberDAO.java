@@ -246,6 +246,36 @@ public class MemberDAO {
 	
    }
    
+   public MemberVO FindPW(String name , String phone) {
+	   String sql = "select * from member where name=? and phone=?";   
+	   Connection conn = null;
+	   PreparedStatement pstmt = null;
+	   ResultSet rs = null;
+	   MemberVO mvo = null;
+	  
+	   try {
+		   conn = DBManager.getConnection();
+		   pstmt = conn.prepareStatement(sql);
+		   pstmt.setString(1, name);
+		   pstmt.setString(2, phone);
+		   
+		   rs = pstmt.executeQuery();
+		   
+		   if(rs.next()) {
+			 mvo = new MemberVO();
+			 mvo.setName(rs.getString("name"));
+			 mvo.setPhone(rs.getString("phone"));
+			 mvo.setPass(rs.getString("pass"));
+		   }
+	   }catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		DBManager.close(conn, pstmt, rs);
+	}
+	return mvo;
+	
+   }
+   
    
    
 

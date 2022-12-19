@@ -74,6 +74,10 @@ public class ActionFactory {
 			action = new MemberIDFormAction();
 		}else if(command.equals("memberID_now")) {
 			action = new MemberIDnowAction();
+		}else if(command.equals("memberpw_form")) {
+			action = new MemberpwFormAction();
+		}else if(command.equals("memberPW_now")) {
+			action = new MemberPWnowAction();
 		}
 		return action;
 	}
