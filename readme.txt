@@ -1,5 +1,7 @@
 # TP_CINEMA5
 
+영화관 사이트
+
 create database cinema;
 use cinema;
 
